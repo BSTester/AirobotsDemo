@@ -1,10 +1,11 @@
 # -*- encoding=utf8 -*-
 
-from airtest.core.api import *
+from airobots.core.api import *
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
 from TestCase.PageObjects.android_demo import DemoOP
-from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+from airobots.poco.android import AndroidUiautomation
+import os
 
 
 class AndroidCase(TestCase):
@@ -13,7 +14,7 @@ class AndroidCase(TestCase):
     @classmethod
     def setUpClass(cls):
         super(AndroidCase, cls).setUpClass()
-        cls.poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
+        cls.poco = AndroidUiautomation(use_airtest_input=True, screenshot_each_action=False)
         cls.android = DemoOP(driver=cls.poco)
 
     def setUp(self):
@@ -36,11 +37,9 @@ class AndroidCase(TestCase):
     def tearDownClass(cls):
         super(AndroidCase, cls).tearDownClass()
 
-    def test_heytea(self):
-        self.android.wake_up_and_open_wechat()
-        self.android.open_heytea()
-        self.android.open_vip()
-        nickname = self.poco(type="android.webkit.WebView", name="android.webkit.WebView").child('android.view.View').child('android.view.View').get_text()
-        assert_equal(nickname, '阿白', '对比昵称是否正确')
-        self.android.close_heytea()
-        self.android.close_wechat()
+    def test_calc(self):
+        self.android.wake_up_and_open_calc()
+        self.android.calc_add()
+        assert_exists(Template(os.path.join(os.path.dirname(__file__), "tpl1602777528520.png"), record_pos=(0.379, -0.267), resolution=(720, 1280)), "计算结果是否等于2")
+        self.android.calc_c()
+        self.android.close_calc()

@@ -1,7 +1,7 @@
 # -*- encoding=utf8 -*-
 __author__ = "BSTester"
 
-from airtest.core.api import *
+from airobots.core.api import *
 from unittest import TestCase
 import os
 
@@ -12,35 +12,22 @@ class DemoOP(TestCase):
         self.poco = driver
 
     """Demo page objects."""
-    def wake_up_and_open_wechat(self):
+    def wake_up_and_open_calc(self):
         wake()
-        if self.poco("com.android.systemui:id/notification_stack_scroller").exists():
-            self.poco("com.android.systemui:id/notification_stack_scroller").swipe([-0.0251, -0.4377])
-        if self.poco("com.android.systemui:id/key8").exists():
-            for _ in range(6):
-                self.poco("com.android.systemui:id/key8").click()
-            self.poco("com.android.systemui:id/key_enter_text").click()
         keyevent("HOME")
-        start_app('com.tencent.mm')
+        start_app('com.meizu.flyme.calculator')
 
-    def open_heytea(self):
-        self.poco(name="com.tencent.mm:id/civ", text='发现').click()
-        self.poco(text="小程序").click()
-        self.poco(text="喜茶GO").click()
+    def calc_add(self):
+        touch(Template(os.path.join(os.path.dirname(__file__), "tpl1602698317745.png"), record_pos=(-0.351, -0.026), resolution=(720, 1280)))
+        self.poco(text="1").click()
+        touch(Template(os.path.join(os.path.dirname(__file__), "tpl1602700388209.png"), record_pos=(0.331, 0.554), resolution=(720, 1280)))
+        self.poco(text="1").click()
+        touch(Template(os.path.join(os.path.dirname(__file__), "tpl1602700724083.png"), record_pos=(0.332, 0.76), resolution=(720, 1280)))
         sleep(2)
 
-    def open_vip(self):
-        self.poco(name="com.tencent.mm:id/fwd", text="我的").click()
-        touch(Template(os.path.join(os.path.dirname(__file__), r"tpl1584605281940.png"), record_pos=(0.281, -0.156), resolution=(1080, 2340)))
+    def calc_c(self):
+        touch(Template(os.path.join(os.path.dirname(__file__), "tpl1602698317745.png"), record_pos=(-0.351, -0.026), resolution=(720, 1280)))
         sleep(2)
 
-    def close_heytea(self):
-        self.poco("com.tencent.mm:id/dc").click()
-        self.poco(name="com.tencent.mm:id/fwd", text="点单").click()
-        self.poco("关闭").click()
-
-    def close_wechat(self):
-        self.poco("com.tencent.mm:id/dn").click()
-        self.poco(name="com.tencent.mm:id/civ", text='微信').click()
-        stop_app('com.tencent.mm')
-        keyevent("HOME")
+    def close_calc(self):
+        stop_app('com.meizu.flyme.calculator')
