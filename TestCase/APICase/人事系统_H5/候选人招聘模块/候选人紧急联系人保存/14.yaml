@@ -1,0 +1,26 @@
+config:
+    base_url: $base_url
+    name: 候选人紧急联系人保存 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+teststeps:
+-   name: /$baseUrlH5/entrant/recruit/saveEntrantEmergency
+    request:
+        headers:
+            Authorization: $token_h5
+            Content-Type: application/json
+        json:
+            emergencyAddress: 联系地址222
+            emergencyMan: 姓名1
+            emergencyPhone: '18888888888'
+            emergencyRelative: 朋友
+            entrantId: $entrantId
+        method: POST
+        url: /$baseUrlH5/entrant/recruit/saveEntrantEmergency
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

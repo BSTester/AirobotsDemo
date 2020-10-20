@@ -1,0 +1,29 @@
+config:
+    base_url: $base_url
+    name: 取消配送-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: 获取可选配送商取消原因-正常返回
+    testcase: TestCase/APICase/配送管理/rule/13.yaml
+    export: ['reasonId']
+-   name: 根据条件筛选参数获取配送订单信息-按品牌和配送状态查询
+    testcase: TestCase/APICase/配送管理/order/根据条件筛选参数获取配送订单信息/18.yaml
+    export: ['deliveryNo']
+-   name: $baseUrl/order/cancelDelivery
+    request:
+        json: 
+            deliveryNo: $deliveryNo
+            id: $reasonId
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        method: POST
+        url: $baseUrl/order/cancelDelivery
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

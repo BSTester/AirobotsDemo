@@ -1,0 +1,25 @@
+config:
+    base_url: $base_url
+    name: 获取可选门店列表-按名称搜索
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: $baseUrl/rule/listSelectableStore
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            brandId: '26000252'
+            pageNum: 1
+            pageSize: 10
+            storeName: 测试
+        method: POST
+        url: $baseUrl/rule/listSelectableStore
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

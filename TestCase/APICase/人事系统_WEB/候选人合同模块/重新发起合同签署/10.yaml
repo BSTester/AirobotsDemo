@@ -1,0 +1,297 @@
+config:
+    base_url: $base_url
+    name: 重新发起合同签署 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 合同分页查询 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_WEB/候选人合同模块/合同分页查询/13.yaml
+    export: ["entrantContractCode"]
+-   name: 查询业务分类列表 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_WEB/候选人合同模块/查询业务分类列表/15.yaml
+    export: ["contractCategoryId"]
+-   name: $baseUrl/entrant/contract/reinvoke
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            contractCategoryId: $contractCategoryId
+            contractCategoryName: 科技研发职能劳动合同
+            contractName: ''
+            contractReceiver:
+                departName: IT测试组
+                entrantMobile: '13570834571'
+                entrantName: 彭鹏
+                entryDate: '2020-08-17'
+                postName: 测试工程师
+                workCityName: 深圳市
+                workDistrictName: ''
+                workProvinceName: 深圳市
+            contractSubject: 深圳市品道科技研发有限公司
+            contractType: '1'
+            entrantContractCode: $entrantContractCode
+            remark: ''
+            signDeadline: '2020-09-16 00:00:00'
+            templateParams:
+                个人邮箱:
+                    canModify: false
+                    fieldName: email
+                    name: 个人邮箱
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: test@pin-dao.cn
+                入职日期:
+                    canModify: false
+                    fieldName: entryDateA
+                    name: 入职日期
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2020年08月17日
+                入职时间:
+                    canModify: false
+                    fieldName: entryDateD
+                    name: 入职时间
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2020年08月17日
+                劳动合同/协议主体:
+                    canModify: false
+                    fieldName: contractSubject
+                    name: 劳动合同/协议主体
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 深圳市品道科技研发有限公司
+                合同开始日期:
+                    canModify: false
+                    fieldName: entryDateB
+                    name: 合同开始日期
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2020年08月17日
+                合同期满不引诱月份:
+                    canModify: true
+                    fieldName: temptationRestrictMonths
+                    name: 合同期满不引诱月份
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: number
+                    value: '12'
+                合同期满竞业限制月份:
+                    canModify: true
+                    fieldName: completionRestrictMonths
+                    name: 合同期满竞业限制月份
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: number
+                    value: '12'
+                合同期限:
+                    canModify: false
+                    fieldName: contractMonths
+                    name: 合同期限
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: number
+                    value: '42'
+                合同结束日期:
+                    canModify: false
+                    fieldName: contractEndDayA
+                    name: 合同结束日期
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2024年02月16日
+                地址:
+                    canModify: true
+                    fieldName: default17
+                    name: 地址
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 现居住地址test
+                姓名:
+                    canModify: false
+                    fieldName: entrantName
+                    name: 姓名
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 彭鹏
+                工作城市:
+                    canModify: true
+                    fieldName: default18
+                    name: 工作城市
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 广东省
+                手机号:
+                    canModify: false
+                    fieldName: entrantMobile
+                    name: 手机号
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: '13570834571'
+                最高学历:
+                    canModify: false
+                    fieldName: topDegree
+                    name: 最高学历
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 大本
+                现居住地址:
+                    canModify: false
+                    fieldName: address
+                    name: 现居住地址
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 现居住地址test
+                签约地点:
+                    canModify: false
+                    fieldName: signCity
+                    name: 签约地点
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 广东省深圳市
+                职位:
+                    canModify: false
+                    fieldName: postName
+                    name: 职位
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 测试工程师
+                试用期开始日期:
+                    canModify: false
+                    fieldName: entryDateC
+                    name: 试用期开始日期
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2020年08月17日
+                试用期结束日期:
+                    canModify: false
+                    fieldName: probationA
+                    name: 试用期结束日期
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: date
+                    value: 2021年02月16日
+                身份证号:
+                    canModify: false
+                    fieldName: idCard
+                    name: 身份证号
+                    optionValue: ''
+                    options: []
+                    regularExpression: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+                    required: true
+                    type: text
+                    value: '522129198807130016'
+                身份证地址:
+                    canModify: false
+                    fieldName: cardAddress
+                    name: 身份证地址
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 身份证地址testing
+                部门:
+                    canModify: false
+                    fieldName: departName
+                    name: 部门
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: IT测试组
+                需补充提交的证件/证明/资料:
+                    canModify: true
+                    fieldName: additionalMaterial
+                    name: 需补充提交的证件/证明/资料
+                    optionValue: ''
+                    options: []
+                    regularExpression: ''
+                    required: true
+                    type: text
+                    value: 无
+            templates:
+            -   id: '2731461539390296658'
+                name: 6.录用条件
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=WGd6ZEhESGN6TUtybDl2NHN5cnRCWUdKeVR5Wjk5K0d6eHpsSFdNb2FhOEh1eUZnZkVtdWJ0Qi9yREJ5TitTYQ==
+            -   id: '2731461539310604881'
+                name: 7.品道科技研发-保密、竞业限制和专利权协议【内部版】-2020年7月版
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=aGhsZ29UU2IzUjhHbmVDaWxaVm4zeUNaZ0s5c0lRbU1SNmluTklrMnNqbXcrWjJmcUN5NWlTYlZBTkRQdHlDSw==
+            -   id: '2731461539230913104'
+                name: 8.办公室人员劳动合同-品道餐饮-深圳201906
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=SmlQY3Fqckw3cDZybEJ2STYvSCtoejJaSjBCODFlMlVjd2lnRjVlbTBhMEdpQWdqdnYwWkJkc3BscS9xL1pRMg==
+            -   id: '2731461539704869462'
+                name: 2.员工入职承诺书
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=K0dMSWNVREVRcnZLcm5lWDh3ekRPU1FtQm5uandHY2ZqYjYzNm9IVWdXY3ZXOGpFQ2g2eXYrbUV3ZkwzT3RGOQ==
+            -   id: '2731461539625177685'
+                name: 3.（职能）员工手册声明书
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=RjZDYjdqdDdycU1tSWRobDhVL25GREhCclViOGRiLzZKMGljVDBMMHE1KzBHWDJqTG1BMmFJcW5pTC81QVAzWA==
+            -   id: '2731461539545485908'
+                name: 4.品道萌新入职指南20200701
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=RFZmM1QraVcxTmZEbmpMeWJadE5VSEhyeTFTdWxQRjgvb0doWGpSbjVMd01OdlRvNVZmNnF0eDZvbDU2dUJMMQ==
+            -   id: '2731461539469988435'
+                name: 5.离职证明或个人劳动关系申明书（品道餐饮）
+                url: https://expose.qiyuesuo.cn/standard/template/view?token=QTNYaTB2ZFRoYi9wNXoyM2V0Kzd4SEd1YkZHSmdvWjNhS2NoL0d0QUM2bGs4bmZENmJhZ1F2dUd4SUJlakZ6Uw==
+        method: POST
+        url: $baseUrl/entrant/contract/reinvoke
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

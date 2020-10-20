@@ -1,0 +1,20 @@
+config:
+    base_url: ${base_url}
+    name: 获取素材可选时间5s和10s成功
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/timeRuleList
+    request:
+        data: ''
+        headers: {}
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/timeRuleList
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200

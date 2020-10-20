@@ -1,0 +1,40 @@
+config:
+    base_url: ${base_url}
+    name: 添加方案-正常返回
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: ${base_url}/storeServer/store/businessTimeManage/addStoreBusinessTimeInfo
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            businessTimeName: SZ配送时间方案test
+            businessTimeRule:
+            -   days: 1,2,3
+                rules:
+                - '09:00'
+                - '22:00'
+                status: '1'
+            -   days: 4,5,6
+                rules:
+                - '10:00'
+                - '22:00'
+                status: '1'
+            -   days: '7'
+                rules:
+                - '10:00'
+                - '22:00'
+                status: '2'
+            businessTimeType: 2
+        method: POST
+        url: ${base_url}/storeServer/store/businessTimeManage/addStoreBusinessTimeInfo
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

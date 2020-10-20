@@ -1,0 +1,37 @@
+config:
+    base_url: $base_url
+    name: 候选人教育背景更新 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+teststeps:
+-   name: 候选人教育背景保存 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人教育背景保存/10.yaml
+-   name: 查看候选人详情 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/查看候选人详情/4.yaml
+    export: ["educationId"]
+-   name: /$baseUrlH5/entrant/recruit/modifyEntrantEduction
+    request:
+        json:
+            beginDate: '2020-04-01'
+            certificateName: 测试证书
+            certificatePhotoUrl:
+            -   url: https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/tfnh1imr2r80-byz.png
+                uri: test-pd/tfnh1imr2r80-byz.png
+            endDate: '2020-08-01'
+            entrantId: $entrantId
+            id: $educationId
+            major: 测试专业
+            schoolName: 测试1
+            topDegree: 6
+        headers:
+            Authorization: $token_h5
+            Content-Type: application/json
+        method: POST
+        url: /$baseUrlH5/entrant/recruit/modifyEntrantEduction
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

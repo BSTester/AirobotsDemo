@@ -1,0 +1,74 @@
+config:
+    base_url: $base_url
+    name: 店长HR补充候选人工作信息 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 店长HR审核通过 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_WEB/候选人招聘模块/店长HR审核通过/6.yaml
+-   name: $baseUrl/entrant/recruit/pageEntrant
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            auditStatus: 3
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: $baseUrl/entrant/recruit/pageEntrant
+    extract:
+        entrantId: body.data.list.0.entrantInfoId
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: $baseUrl/entrant/recruit/supplementaryInformation
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            accumulationFund: '6'
+            accumulationFundSite: '2'
+            attendance: '0'
+            companyId: '20'
+            companyName: 深圳市品道科技研发有限公司
+            contractDepartId: 91570
+            contractDepartName: 测试部门
+            departId: 91572
+            departName: ''
+            dispatchStyle: ''
+            educationJson: '[{"beginDate":"2020-04-01","certificateName":"测试证书","endDate":"2020-08-01","major":"测试专业","schoolName":"测试","topDegree":6}]'
+            enterChannel: '0'
+            entryDate: '2020-08-17'
+            housingFund: '26'
+            id: $entrantId
+            postId: '58'
+            postName: 测试工程师
+            postType: '2'
+            recommendMan: 测试
+            recommendManMobile: '18888888888'
+            thirdPartyCompany: ''
+            trialMonths: 6
+            workCityId: 440300
+            workCityName: 深圳市
+            workDistrictId: ''
+            workDistrictName: ''
+            workJson: '[{"beginDate":"2020-03-01","companyName":"测试公司","endDate":"2020-08-01","position":"测试职位","workOrder":0},{"beginDate":"2020-03-01","companyName":"测试公司1","endDate":"2020-08-01","position":"测试职位2","workOrder":1},{"beginDate":"2020-03-01","companyName":"测试公司3","endDate":"2020-08-01","position":"测试职位3","workOrder":2},{"beginDate":"2020-01-01","companyName":"测试公司4","endDate":"2020-08-01","position":"测试职位4","workOrder":3}]'
+            workProvinceId: 440000
+            workProvinceName: 广东省
+            workStatus: '0'
+            workType: '0'
+        method: POST
+        url: $baseUrl/entrant/recruit/supplementaryInformation
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

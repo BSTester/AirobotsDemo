@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: pid不存在，返回为空
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/getStoreAreaList
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            pid: 9
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/getStoreAreaList
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200

@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: 移动端获取执行计划列表详情-mac有对应投放计划
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/mobile-listPlanDetail
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            deviceMac: 8S48Z_E382W_107717a491e4
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/mobile-listPlanDetail
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200

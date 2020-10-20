@@ -1,0 +1,41 @@
+config:
+    base_url: ${base_url}
+    name: 投放计划新增-生效时间为空，新增失败
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/addScreenPlan
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            brandId: 26000252
+            endTime: ''
+            fileList:
+            -   md5: md445445545454
+                mediaType: 1
+                sequence: 0
+                time: 5
+                url: test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png
+            -   md5: md445445545455
+                mediaType: 1
+                sequence: 1
+                time: 5
+                url: test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png
+            planName: 奈雪主屏33
+            planTypeId: 1
+            screenId: 1
+            startTime: ''
+            storeIdList:
+            - NXHBCC0001
+            - NXXBLZ0001
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/addScreenPlan
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 10005

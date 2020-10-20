@@ -1,0 +1,27 @@
+config:
+    base_url: ${base_url}
+    name: 方案列表-正常返回-按方案类型搜索1
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeList
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            businessTimeCode: ''
+            businessTimeName: ''
+            businessTimeType: 1
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeList
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

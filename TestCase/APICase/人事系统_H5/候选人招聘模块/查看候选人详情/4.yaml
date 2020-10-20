@@ -1,0 +1,32 @@
+config:
+    base_url: $base_url
+    name: 查看候选人详情 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+teststeps:
+-   name: 查询候选人列表-客户端（候选人） - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/查询候选人列表/3.yaml
+    export: ["entrantId"]
+-   name: /$baseUrlH5/entrant/recruit/findEntrant
+    request:
+        json: 
+            entrantId: $entrantId
+        headers:
+            Authorization: $token_h5
+            Content-Type: application/json
+        method: POST
+        url: /$baseUrlH5/entrant/recruit/findEntrant
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+    extract:
+        entrantBasicId: body.data.entrantBasic.id
+        educationId: body.data.education.id
+        emergencyId: body.data.emergency.id
+        appendixId: body.data.appendix.id
+        otherId: body.data.other.id
+

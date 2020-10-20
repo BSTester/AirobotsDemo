@@ -1,0 +1,24 @@
+config:
+    base_url: $base_url
+    name: 根据条件筛选参数获取配送规则信息-按配送商搜索
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: $baseUrl/rule/listDeliveryRuleByParam
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            deliverId: '5'
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: $baseUrl/rule/listDeliveryRuleByParam
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

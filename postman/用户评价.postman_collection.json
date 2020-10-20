@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "df9d395b-dd01-492c-a79e-8d8b23f534c3",
+		"name": "门店评价",
+		"description": "评价关系项目",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "城市列表",
+			"item": [
+				{
+					"name": "城市名称模糊查询-查询成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"<string>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cityList",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cityList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"city\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cityList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cityList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "不存在的城市-返回为空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"<string>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cityList",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cityList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"city\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cityList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cityList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "修改差评参数配置",
+			"item": [
+				{
+					"name": "修改差评分数成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updateNegativeReviewConfiguration"
+							]
+						},
+						"description": "```\n消息推送枚举\n\n200,\"企业微信\"\n201,\"短信\"\n202,\"消息中心\"\n\n\n推送职位枚举\n\n100,\"高级营运总监\"\n101,\"高级营运经理\"\n102,\"高级分区经理\"\n103,\"营运总监\"\n104,\"营运经理\"\n105,\"分区经理\"\n106,\"资深店长\"\n107,\"店长\"\n108,\"副店长\"\n109,\"副经理\"\n```"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"updateNegativeReviewConfiguration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "修改差评分数为负数，修改失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updateNegativeReviewConfiguration"
+							]
+						},
+						"description": "```\n消息推送枚举\n\n200,\"企业微信\"\n201,\"短信\"\n202,\"消息中心\"\n\n\n推送职位枚举\n\n100,\"高级营运总监\"\n101,\"高级营运经理\"\n102,\"高级分区经理\"\n103,\"营运总监\"\n104,\"营运经理\"\n105,\"分区经理\"\n106,\"资深店长\"\n107,\"店长\"\n108,\"副店长\"\n109,\"副经理\"\n```"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"updateNegativeReviewConfiguration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "修改差评接收人岗位成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updateNegativeReviewConfiguration"
+							]
+						},
+						"description": "```\n消息推送枚举\n\n200,\"企业微信\"\n201,\"短信\"\n202,\"消息中心\"\n\n\n推送职位枚举\n\n100,\"高级营运总监\"\n101,\"高级营运经理\"\n102,\"高级分区经理\"\n103,\"营运总监\"\n104,\"营运经理\"\n105,\"分区经理\"\n106,\"资深店长\"\n107,\"店长\"\n108,\"副店长\"\n109,\"副经理\"\n```"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    },\n    {\n        \"configId\": \"<string>\",\n        \"configName\": \"<string>\",\n        \"configType\": \"<string>\",\n        \"configContent\": \"<string>\"\n    }\n]"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/updateNegativeReviewConfiguration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"updateNegativeReviewConfiguration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取差评参数配置",
+			"item": [
+				{
+					"name": "获取差评参数配置成功",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/negativeReviewConfiguration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"negativeReviewConfiguration"
+							]
+						},
+						"description": "```\n配置枚举\n1,\"tripartiteScore\",\"美团、饿了么差评分数标准\"\n2,\"qmaiScore\",\"企迈小程序差评分数标准\"\n3,\"position\",\"差评消息接收人岗位\"\n4,\"noticeMethod\",\"通知方式\"\n5,\"copyWriting\",\"提醒文案配置\"\n```"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/negativeReviewConfiguration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"negativeReviewConfiguration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取操作记录流水表",
+			"item": [
+				{
+					"name": "获取操作记录流水表，当前页1，每页10条",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": \"1\",\n    \"pageSize\": \"5\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/configurationRecords",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"configurationRecords"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": \"1\",\n    \"pageSize\": \"5\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/configurationRecords",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"configurationRecords"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "导出评论表",
+			"item": [
+				{
+					"name": "导出评论表-通过品牌id、门店名、订单号和评价来源",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exportCommentsExcel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exportCommentsExcel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/exportCommentsExcel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"exportCommentsExcel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "导出评论表 -通过品牌id和差评",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exportCommentsExcel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exportCommentsExcel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/exportCommentsExcel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"exportCommentsExcel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "导出评论表 -通过品牌id和下单时间",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exportCommentsExcel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exportCommentsExcel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/exportCommentsExcel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"exportCommentsExcel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "导出评论表 -通过品牌id和评论时间",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/exportCommentsExcel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"exportCommentsExcel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/exportCommentsExcel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"exportCommentsExcel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "推送评价信息",
+			"item": [
+				{
+					"name": "推送评价信息-正常",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "推送评价信息-没有该评论",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "评论列表",
+			"item": [
+				{
+					"name": "评论列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\",\n    \"pageNum\": \"1\",\n    \"pageSize\": \"5\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/commentsList",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"commentsList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"<string>\",\n    \"storeName\": \"<string>\",\n    \"orderNo\": \"<string>\",\n    \"fromTypeId\": \"<number>\",\n    \"userTelephone\": \"<string>\",\n    \"commentType\": \"<number>\",\n    \"city\": \"<string>\",\n    \"orderTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"commentTime\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"score\": \"<number>\",\n    \"pageNum\": \"1\",\n    \"pageSize\": \"5\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/commentsList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"commentsList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "/storeServer/evaluationManagement",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

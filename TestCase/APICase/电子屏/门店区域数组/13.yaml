@@ -1,0 +1,21 @@
+config:
+    base_url: ${base_url}
+    name: 存在的品牌id-返回区域门店成功
+    variables:
+        baseUrl: /storeServer
+        brandId: '26000252'
+teststeps:
+-   name: '${base_url}/${baseUrl}/screen/storeAreaList?brandId=26000252'
+    request:
+        headers: {}
+        method: GET
+        params:
+            brandId: ${brandId}
+        url: '${base_url}/${baseUrl}/screen/storeAreaList'
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200

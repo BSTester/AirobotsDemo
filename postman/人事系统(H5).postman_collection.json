@@ -1,0 +1,2036 @@
+{
+	"info": {
+		"_postman_id": "5d17b0f2-3ca6-4e30-9254-fad7d59bfdd0",
+		"name": "人事系统(H5)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "候选人招聘模块",
+			"item": [
+				{
+					"name": "候选人获取验证码",
+					"item": [
+						{
+							"name": "候选人获取验证码 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2f0745b1-b8b4-4904-972b-04d454b1a51e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\": \"13570834571\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/getVerificationCode",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"getVerificationCode"
+									]
+								},
+								"description": "获取验证码，会校验是否存在该手机号下是否存在未完成的单据"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"mobile\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/getVerificationCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"getVerificationCode"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人登录",
+					"item": [
+						{
+							"name": "候选人登录 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0f327b0-696e-4e81-bc08-b158a027fd19",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"var body = pm.response.json();\r",
+											"pm.globals.set(\"token\", body.data);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "91cb9735-1a80-4a53-b9e3-f448fd8bbcce",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\": \"13570834571\",\n    \"verificationCode\": \"888888\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"mobile\": \"<string>\",\n    \"verificationCode\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "查询候选人列表-客户端（候选人）",
+					"item": [
+						{
+							"name": "查询候选人列表-客户端（候选人） - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "521012a5-87ca-4ddd-97ce-e5c97fd402f3",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"var body = pm.response.json();\r",
+											"pm.globals.set(\"entrantId\", body.data.entrantId);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "34f858ea-f119-47ab-8867-fdb521fa0414",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/queryEntrantMain?entrantMobile=13570834571",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"queryEntrantMain"
+									],
+									"query": [
+										{
+											"key": "entrantMobile",
+											"value": "13570834571"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/queryEntrantMain?entrantMobile=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"queryEntrantMain"
+											],
+											"query": [
+												{
+													"key": "entrantMobile",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "查看候选人详情",
+					"item": [
+						{
+							"name": "查看候选人详情 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "afc8c5f1-08d8-42f8-b6de-9d9253159429",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"var body = pm.response.json();\r",
+											"pm.globals.set(\"entrantBasicId\", body.data.entrantBasic.id)\r",
+											"pm.globals.set(\"educationId\", body.data.education.id)\r",
+											"pm.globals.set(\"emergencyId\", body.data.emergency.id)\r",
+											"pm.globals.set(\"appendixId\", body.data.appendix.id)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"entrantId\": {{entrantId}}\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/findEntrant",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"findEntrant"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/findEntrant?entrantInfoId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"findEntrant"
+											],
+											"query": [
+												{
+													"key": "entrantInfoId",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取候选人初始化基础信息",
+					"item": [
+						{
+							"name": "获取候选人初始化基础信息 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8e293eb4-7939-436e-a848-4c5fee9fa387",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": {{entrantId}}\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/getInitEntrantBasic",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"getInitEntrantBasic"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/getInitEntrantBasic",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"getInitEntrantBasic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取候选人初始化教育信息",
+					"item": [
+						{
+							"name": "获取候选人初始化教育信息 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9b4bb5fb-3e0c-449d-b2bd-cdd712f4b438",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": {{entrantId}}\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/getInitEntrantEducation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"getInitEntrantEducation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"entrantId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/getInitEntrantEducation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"getInitEntrantEducation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取候选人初始化工作信息",
+					"item": [
+						{
+							"name": "获取候选人初始化工作信息 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef062708-3e99-468c-b8a1-063f6813c98d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": {{entrantId}}\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/getInitEntrantWork",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"getInitEntrantWork"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/getInitEntrantWork",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"getInitEntrantWork"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人基础信息保存",
+					"item": [
+						{
+							"name": "候选人基础信息保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "55aa2b0d-b86c-465f-b30a-d26f5d66ab0d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": {{entrantId}},\n    \"entrantName\": \"彭鹏\",\n    \"entrantMobile\": \"13570834571\",\n    \"idCard\": \"522129198807130016\",\n    \"cardImageUrl\": [\n        {\n            \"uri\": \"test-pd/qmpue2hc42k0-sfz.png\"\n        },\n        {\n            \"uri\": \"test-pd/j1ov1al1v6g0-sfz.png\"\n        }\n    ],\n    \"cardEndDate\": \"2022-08-31\",\n    \"cardAddress\": \"身份证地址test\",\n    \"birthDate\": \"1988-07-13\",\n    \"constellation\": \"5\",\n    \"gender\": \"0\",\n    \"nativePlace\": \"贵州\",\n    \"marriage\": \"0\",\n    \"nation\": \"0\",\n    \"politicalStatus\": \"0\",\n    \"email\": \"test@pin-dao.cn\",\n    \"bankAccount\": \"66666666666666666\",\n    \"bankId\": \"0\",\n    \"bankName\": \"\",\n    \"householdType\": \"0\",\n    \"address\": \"现居住地址test\",\n    \"isNcms\": \"1\",\n    \"healthCardDate\": \"2020-08-31\",\n    \"healthCardPhotoUrl\": [\n        {\n            \"uri\": \"test-pd/oj7t5m9b5es0-jkz.png\"\n        }\n    ],\n    \"bankPhotoUrl\": [\n        {\n            \"uri\": \"test-pd/12de2tn1vrko0-yhk.png\"\n        },\n        {\n            \"uri\": \"test-pd/j9l289skhfg0-yhk.png\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantBasic",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantBasic"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"entrantId\": \"<integer>\",\n        \"entrantName\": \"<string>\",\n        \"nation\": \"<string>\",\n        \"marriage\": \"<string>\",\n        \"nativePlace\": \"<string>\",\n        \"gender\": \"<string>\",\n        \"constellation\": \"<integer>\",\n        \"birthDate\": \"<string>\",\n        \"cardAddress\": \"<string>\",\n        \"cardEndDate\": \"<string>\",\n        \"cardImageUrl\": [\n            {\n                \"cardImageUrl1\": \"<string>\",\n                \"cardImageUrl2\": \"<string>\"\n            },\n            {\n                \"cardImageUrl1\": \"<string>\",\n                \"cardImageUrl2\": \"<string>\"\n            }\n        ],\n        \"idCard\": \"<string>\",\n        \"entrantMobile\": \"<string>\",\n        \"bankAccount\": \"<string>\",\n        \"email\": \"<string>\",\n        \"politicalStatus\": \"<string>\",\n        \"bankId\": \"<integer>\",\n        \"bankPhotoUrl\": [\n            {\n                \"bankPhotoUrl1\": \"<string>\",\n                \"bankPhotoUrl2\": \"<string>\"\n            },\n            {\n                \"bankPhotoUrl1\": \"<string>\",\n                \"bankPhotoUrl2\": \"<string>\"\n            }\n        ],\n        \"householdType\": \"<string>\",\n        \"bankName\": \"<string>\",\n        \"isNcms\": \"<integer>\",\n        \"address\": \"<string>\",\n        \"healthCardPhotoUrl\": [\n            {\n                \"healthCardPhotoUrl1\": \"<string>\",\n                \"healthCardPhotoUrl2\": \"<string>\"\n            },\n            {\n                \"healthCardPhotoUrl1\": \"<string>\",\n                \"healthCardPhotoUrl2\": \"<string>\"\n            }\n        ],\n        \"healthCardDate\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantBasic",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantBasic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人基础信息更新",
+					"item": [
+						{
+							"name": "候选人基础信息更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d008b0af-4d02-46fd-b6f8-47450c64004b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": {{entrantBasicId}},\n    \"entrantId\": {{entrantId}},\n    \"entrantName\": \"彭鹏\",\n    \"entrantMobile\": \"13570834571\",\n    \"idCard\": \"522129198807130016\",\n    \"cardImageUrl\": [\n        {\n            \"uri\": \"test-pd/qmpue2hc42k0-sfz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/qmpue2hc42k0-sfz.png\"\n        },\n        {\n            \"uri\": \"test-pd/j1ov1al1v6g0-sfz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/j1ov1al1v6g0-sfz.png\"\n        }\n    ],\n    \"cardEndDate\": \"2022-08-31\",\n    \"cardAddress\": \"身份证地址testing\",\n    \"birthDate\": \"1988-07-13\",\n    \"constellation\": 5,\n    \"gender\": \"0\",\n    \"nativePlace\": \"贵州\",\n    \"marriage\": \"0\",\n    \"nation\": \"0\",\n    \"politicalStatus\": \"0\",\n    \"email\": \"test@pin-dao.cn\",\n    \"bankAccount\": \"66666666666666666\",\n    \"bankPhotoUrl\": [\n        {\n            \"uri\": \"test-pd/12de2tn1vrko0-yhk.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/12de2tn1vrko0-yhk.png\"\n        },\n        {\n            \"uri\": \"test-pd/j9l289skhfg0-yhk.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/j9l289skhfg0-yhk.png\"\n        }\n    ],\n    \"bankId\": 0,\n    \"bankName\": \"\",\n    \"householdType\": \"0\",\n    \"address\": \"现居住地址test\",\n    \"isNcms\": 1,\n    \"healthCardDate\": \"2020-08-31\",\n    \"healthCardPhotoUrl\": [\n        {\n            \"uri\": \"test-pd/oj7t5m9b5es0-jkz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/oj7t5m9b5es0-jkz.png\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantBasic",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantBasic"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"entrantId\": \"<integer>\",\n        \"entrantName\": \"<string>\",\n        \"nation\": \"<string>\",\n        \"marriage\": \"<string>\",\n        \"nativePlace\": \"<string>\",\n        \"gender\": \"<string>\",\n        \"constellation\": \"<integer>\",\n        \"birthDate\": \"<string>\",\n        \"cardAddress\": \"<string>\",\n        \"cardEndDate\": \"<string>\",\n        \"cardImageUrl\": [\n            {\n                \"cardImageUrl1\": \"<string>\",\n                \"cardImageUrl2\": \"<string>\"\n            },\n            {\n                \"cardImageUrl1\": \"<string>\",\n                \"cardImageUrl2\": \"<string>\"\n            }\n        ],\n        \"idCard\": \"<string>\",\n        \"entrantMobile\": \"<string>\",\n        \"bankAccount\": \"<string>\",\n        \"email\": \"<string>\",\n        \"politicalStatus\": \"<string>\",\n        \"bankId\": \"<integer>\",\n        \"bankPhotoUrl\": [\n            {\n                \"bankPhotoUrl1\": \"<string>\",\n                \"bankPhotoUrl2\": \"<string>\"\n            },\n            {\n                \"bankPhotoUrl1\": \"<string>\",\n                \"bankPhotoUrl2\": \"<string>\"\n            }\n        ],\n        \"householdType\": \"<string>\",\n        \"bankName\": \"<string>\",\n        \"isNcms\": \"<integer>\",\n        \"address\": \"<string>\",\n        \"healthCardPhotoUrl\": [\n            {\n                \"healthCardPhotoUrl1\": \"<string>\",\n                \"healthCardPhotoUrl2\": \"<string>\"\n            },\n            {\n                \"healthCardPhotoUrl1\": \"<string>\",\n                \"healthCardPhotoUrl2\": \"<string>\"\n            }\n        ],\n        \"healthCardDate\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantBasic",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantBasic"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人教育背景保存",
+					"item": [
+						{
+							"name": "候选人教育背景保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a1ff3520-1f06-485b-9557-1230b165d5df",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"\",\n    \"entrantId\": \"{{entrantId}}\",\n    \"schoolName\": \"测试\",\n    \"topDegree\": 6,\n    \"major\": \"测试专业\",\n    \"beginDate\": \"2020-04-01\",\n    \"endDate\": \"2020-08-01\",\n    \"certificateName\": \"测试证书\",\n    \"certificatePhotoUrl\": [\n        {\n            \"file\": {\n                \"dir\": \"test-pd/tfnh1imr2r80-byz.png\",\n                \"content\": \"blob:http://ehr-h5-test.pin-dao.cn/946f8691-7f2b-45f1-b20a-e9b5b4891eed\"\n            },\n            \"status\": \"\",\n            \"message\": \"\",\n            \"content\": \"\",\n            \"uri\": \"test-pd/tfnh1imr2r80-byz.png\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantEduction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantEduction"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantEduction",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantEduction"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人教育背景更新",
+					"item": [
+						{
+							"name": "候选人教育背景更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "18af669f-5166-4fc0-bf5b-d8a9ce051340",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": {{educationId}},\n    \"entrantId\": \"{{entrantId}}\",\n    \"schoolName\": \"测试\",\n    \"topDegree\": 6,\n    \"major\": \"测试专业\",\n    \"beginDate\": \"2020-04-01\",\n    \"endDate\": \"2020-08-01\",\n    \"certificateName\": \"测试证书\",\n    \"certificatePhotoUrl\": [\n        {\n            \"uri\": \"test-pd/tfnh1imr2r80-byz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/tfnh1imr2r80-byz.png\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantEduction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantEduction"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantEduction",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantEduction"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人家庭成员保存",
+					"item": [
+						{
+							"name": "候选人家庭成员保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7c8a2f3a-828c-4959-8583-c74665a47f5f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"relation\": \"兄弟\",\n        \"familyName\": \"兄弟1\",\n        \"occupation\": \"无业\",\n        \"phoneNum\": \"18444444444\",\n        \"address\": \"联系地址11\",\n        \"familyOrder\": \"\",\n        \"entrantId\": \"{{entrantId}}\"\n    }\n]",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantFamily",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantFamily"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantFamily",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantFamily"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人家庭成员更新",
+					"item": [
+						{
+							"name": "候选人家庭成员更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e39893ef-aea9-4ec5-a76c-1f27832628de",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"relation\": \"兄弟\",\n        \"familyName\": \"兄弟1\",\n        \"occupation\": \"无业\",\n        \"phoneNum\": \"18444444444\",\n        \"address\": \"联系地址11\",\n        \"familyOrder\": \"\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"relation\": \"兄弟\",\n        \"familyName\": \"兄弟2\",\n        \"occupation\": \"无业\",\n        \"phoneNum\": \"18444444444\",\n        \"address\": \"联系地址11\",\n        \"familyOrder\": \"\",\n        \"entrantId\": \"{{entrantId}}\"\n    }\n]",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantFamily",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantFamily"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantFamily",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantFamily"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人紧急联系人保存",
+					"item": [
+						{
+							"name": "候选人紧急联系人保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "feda12dc-336a-4e64-aa2b-21c0a53be820",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emergencyRelative\": \"朋友\",\n    \"emergencyMan\": \"姓名1\",\n    \"emergencyPhone\": \"18888888888\",\n    \"emergencyAddress\": \"联系地址222\",\n    \"entrantId\": \"{{entrantId}}\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantEmergency",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantEmergency"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantEmergency",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantEmergency"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人紧急联系人更新",
+					"item": [
+						{
+							"name": "候选人紧急联系人更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7cbf723d-b61e-44cf-bc60-a35a1bb770fa",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": {{emergencyId}},\n    \"entrantId\": \"{{entrantId}}\",\n    \"emergencyRelative\": \"朋友\",\n    \"emergencyMan\": \"姓名2\",\n    \"emergencyPhone\": \"18888888888\",\n    \"emergencyAddress\": \"联系地址222\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantEmergency",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantEmergency"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantEmergency",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantEmergency"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人其他说明保存",
+					"item": [
+						{
+							"name": "候选人其他说明保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ebc9fb5a-9fcb-4806-bccb-1dcb31b9f544",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": \"{{entrantId}}\",\n    \"id\": 0,\n    \"isCriminal\": \"0\",\n    \"isCriminalDetail\": \"\",\n    \"isHired\": \"0\",\n    \"isHiredDetail\": \"\",\n    \"isInfluential\": \"1\",\n    \"isInfluentialDetail\": \"无\",\n    \"isOtherLabor\": \"0\",\n    \"isOtherLaborDetail\": \"\",\n    \"isRecommend\": \"0\",\n    \"isRecommendDetail\": \"\",\n    \"isRelative\": \"0\",\n    \"isRelativeDetail\": \"\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantOther",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantOther"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantOther",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantOther"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人其他说明更新",
+					"item": [
+						{
+							"name": "候选人其他说明更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "77569b9f-03a9-4a6e-a8ab-3f19928c6f1b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": {{otherId}},\n    \"entrantId\": \"{{entrantId}}\",\n    \"isHired\": \"0\",\n    \"isHiredDetail\": \"\",\n    \"isInfluential\": \"1\",\n    \"isInfluentialDetail\": \"无\",\n    \"isCriminal\": \"0\",\n    \"isCriminalDetail\": \"\",\n    \"isOtherLabor\": \"0\",\n    \"isOtherLaborDetail\": \"\",\n    \"isRelative\": \"0\",\n    \"isRelativeDetail\": \"\",\n    \"isRecommend\": \"undefined\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantOther",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantOther"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantOther",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantOther"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人工作经历保存",
+					"item": [
+						{
+							"name": "候选人工作经历保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8ad5fa2c-62e9-4d24-838e-22926565cbc5",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"companyName\": \"测试公司\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位\",\n        \"yearSalary\": \"11\",\n        \"leaveReason\": \"11\",\n        \"workOrder\": 0,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"companyName\": \"测试公司1\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位2\",\n        \"yearSalary\": \"22\",\n        \"leaveReason\": \"22\",\n        \"workOrder\": 1,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"companyName\": \"测试公司3\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位3\",\n        \"yearSalary\": \"33\",\n        \"leaveReason\": \"33\",\n        \"workOrder\": 2,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"companyName\": \"测试公司4\",\n        \"beginDate\": \"2020-01-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位4\",\n        \"yearSalary\": \"44\",\n        \"leaveReason\": \"44\",\n        \"workOrder\": 3,\n        \"startTime\": \"2019-12-31T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    }\n]",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantWork",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantWork"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantWork",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantWork"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人工作经历更新",
+					"item": [
+						{
+							"name": "候选人工作经历更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9ac5751e-5f77-467e-98ba-9c70e8ab04b2",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"companyName\": \"测试公司\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位\",\n        \"yearSalary\": \"11\",\n        \"leaveReason\": \"11\",\n        \"workOrder\": 0,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"companyName\": \"测试公司1\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位2\",\n        \"yearSalary\": \"22\",\n        \"leaveReason\": \"22\",\n        \"workOrder\": 1,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    },\n    {\n        \"companyName\": \"测试公司3\",\n        \"beginDate\": \"2020-03-01\",\n        \"endDate\": \"2020-08-01\",\n        \"position\": \"测试职位3\",\n        \"yearSalary\": \"33\",\n        \"leaveReason\": \"33\",\n        \"workOrder\": 2,\n        \"startTime\": \"2020-02-29T16:00:00.000Z\",\n        \"endTime\": \"2020-07-31T16:00:00.000Z\",\n        \"entrantId\": \"{{entrantId}}\"\n    }\n]",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantWork",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantWork"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantWork",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantWork"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人附件上传保存",
+					"item": [
+						{
+							"name": "候选人附件上传保存 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "93722ab7-5d26-4214-a4a1-d1bef8e560a9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": \"{{entrantId}}\",\n    \"householdProveUrl\": [\n        {\n            \"uri\": \"test-pd/qe53uolbhas0-sfz.png\"\n        }\n    ],\n    \"leaveProveUrl\": [\n        {\n            \"uri\": \"test-pd/vphl4tsgee00-byz.png\"\n        }\n    ],\n    \"physicalFormUrl\": [],\n    \"schoolProveUrl\": [\n        {\n            \"uri\": \"test-pd/k0gtnu655800-byz.png\"\n        }\n    ],\n    \"pageType\": \"\",\n    \"currentStatus\": \"\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/saveEntrantAppendix",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"saveEntrantAppendix"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"entrantId\": \"<integer>\",\n        \"householdProveUrl\": [\n            {\n                \"householdProveUrl1\": \"<string>\",\n                \"householdProveUrl2\": \"<string>\"\n            },\n            {\n                \"householdProveUrl1\": \"<string>\",\n                \"householdProveUrl2\": \"<string>\"\n            }\n        ],\n        \"leaveProveUrl\": [\n            {\n                \"leaveProveUrl1\": \"<string>\",\n                \"leaveProveUrl2\": \"<string>\"\n            },\n            {\n                \"leaveProveUrl1\": \"<string>\",\n                \"leaveProveUrl2\": \"<string>\"\n            }\n        ],\n        \"physicalFormUrl\": [\n            {\n                \"physicalFormUrl1\": \"<string>\",\n                \"physicalFormUrl2\": \"<string>\"\n            },\n            {\n                \"physicalFormUrl1\": \"<string>\",\n                \"physicalFormUrl2\": \"<string>\"\n            }\n        ],\n        \"schoolProveUrl\": [\n            {\n                \"schoolProveUrl1\": \"<string>\",\n                \"schoolProveUrl2\": \"<string>\"\n            },\n            {\n                \"schoolProveUrl1\": \"<string>\",\n                \"schoolProveUrl2\": \"<string>\"\n            }\n        ]\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/saveEntrantAppendix",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"saveEntrantAppendix"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人附件上传更新",
+					"item": [
+						{
+							"name": "候选人附件上传更新 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "31375650-0ce2-48d8-aced-394aae626664",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": {{appendixId}},\n    \"entrantId\": \"{{entrantId}}\",\n    \"leaveProveUrl\": [\n        {\n            \"uri\": \"test-pd/vphl4tsgee00-byz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/vphl4tsgee00-byz.png\"\n        }\n    ],\n    \"schoolProveUrl\": [\n        {\n            \"uri\": \"test-pd/k0gtnu655800-byz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/k0gtnu655800-byz.png\"\n        }\n    ],\n    \"householdProveUrl\": [\n        {\n            \"uri\": \"test-pd/qe53uolbhas0-sfz.png\",\n            \"url\": \"https://test-pd.oss-cn-beijing.aliyuncs.com/test-pd/qe53uolbhas0-sfz.png\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/modifyEntrantAppendix",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"modifyEntrantAppendix"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"entrantId\": \"<integer>\",\n        \"householdProveUrl\": [\n            {\n                \"householdProveUrl1\": \"<string>\",\n                \"householdProveUrl2\": \"<string>\"\n            },\n            {\n                \"householdProveUrl1\": \"<string>\",\n                \"householdProveUrl2\": \"<string>\"\n            }\n        ],\n        \"leaveProveUrl\": [\n            {\n                \"leaveProveUrl1\": \"<string>\",\n                \"leaveProveUrl2\": \"<string>\"\n            },\n            {\n                \"leaveProveUrl1\": \"<string>\",\n                \"leaveProveUrl2\": \"<string>\"\n            }\n        ],\n        \"physicalFormUrl\": [\n            {\n                \"physicalFormUrl1\": \"<string>\",\n                \"physicalFormUrl2\": \"<string>\"\n            },\n            {\n                \"physicalFormUrl1\": \"<string>\",\n                \"physicalFormUrl2\": \"<string>\"\n            }\n        ],\n        \"schoolProveUrl\": [\n            {\n                \"schoolProveUrl1\": \"<string>\",\n                \"schoolProveUrl2\": \"<string>\"\n            },\n            {\n                \"schoolProveUrl1\": \"<string>\",\n                \"schoolProveUrl2\": \"<string>\"\n            }\n        ]\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/modifyEntrantAppendix",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"modifyEntrantAppendix"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "候选人提交信息",
+					"item": [
+						{
+							"name": "候选人提交信息 - 正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f75b5ed-1384-49ec-997a-a58d90e81da4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entrantId\": {{entrantId}}\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{baseUrl}}/entrant/recruit/entrantSubmit",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{baseUrl}}",
+										"entrant",
+										"recruit",
+										"entrantSubmit"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"entrantId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/entrant/recruit/entrantSubmit",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"entrant",
+												"recruit",
+												"entrantSubmit"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "539b2c63-c68d-4308-b211-09bfd63ddbfa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e4241c66-215f-48cb-8654-a456d0438a89",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ddc643d5-7b26-4575-b043-8e847538e85f",
+			"key": "baseUrl",
+			"value": "/ehr-entrant"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,30 @@
+config:
+    base_url: ${base_url}
+    name: 门店当前状态信息接口-订单-正常返回
+    variables:
+        baseUrl: /
+        deptId: '90361'
+        latitude: '22.561280'
+        longitude: '114.039930'
+        needQueue: '1'
+        needTime: '1'
+teststeps:
+-   name: '{{base_url}}/storeServer/store/getStoreInfoForStock?deptId=90361&needTime=1&needQueue=1&longitude=114.039930&latitude=22.561280'
+    request:
+        headers: 
+            Authorization: ${token}
+        method: GET
+        params:
+            deptId: ${deptId}
+            latitude: ${latitude}
+            longitude: ${longitude}
+            needQueue: ${needQueue}
+            needTime: ${needTime}
+        url: '{{base_url}}/storeServer/store/getStoreInfoForStock'
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

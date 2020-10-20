@@ -1,0 +1,2238 @@
+{
+	"info": {
+		"_postman_id": "16fe61de-b9f3-40ba-9070-be1d3efdb273",
+		"name": "门店管理",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "公共接口",
+			"item": [
+				{
+					"name": "国家-省-市-区四级联动",
+					"item": [
+						{
+							"name": "国家-省-市-区四级联动-正常返回国家",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "948095fe-7cc8-4662-8339-8ffecd3cfe07",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parentAreaId\": 0\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getPublicAreaList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getPublicAreaList"
+									]
+								},
+								"description": "<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">{</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"code\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"msg\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"success\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"data\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">1</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">81</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"日本\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"JPN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"Japan\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"81\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">86</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"中国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"CN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"China\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"86\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">5433</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美属萨摩亚\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    ]</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">}</span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"parentAreaId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/publicArea/getPublicAreaList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"publicArea",
+												"getPublicAreaList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "国家-省-市-区四级联动-正常返回省",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "93e67e0e-51ef-469c-aff2-8cb00e86b908",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parentAreaId\": 86\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getPublicAreaList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getPublicAreaList"
+									]
+								},
+								"description": "<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">{</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"code\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"msg\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"success\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"data\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">1</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">81</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"日本\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"JPN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"Japan\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"81\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">86</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"中国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"CN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"China\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"86\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">5433</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美属萨摩亚\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    ]</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">}</span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"parentAreaId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/publicArea/getPublicAreaList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"publicArea",
+												"getPublicAreaList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "国家-省-市-区四级联动-正常返回市",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ebbaaf4d-e68c-450d-ba46-3a9034d5154c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parentAreaId\": 440000\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getPublicAreaList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getPublicAreaList"
+									]
+								},
+								"description": "<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">{</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"code\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"msg\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"success\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"data\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">1</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">81</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"日本\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"JPN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"Japan\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"81\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">86</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"中国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"CN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"China\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"86\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">5433</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美属萨摩亚\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    ]</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">}</span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"parentAreaId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/publicArea/getPublicAreaList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"publicArea",
+												"getPublicAreaList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "国家-省-市-区四级联动-正常返回区",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5790f3af-e64e-44e4-87e3-da7ccc26b402",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parentAreaId\": 440300\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getPublicAreaList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getPublicAreaList"
+									]
+								},
+								"description": "<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">{</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"code\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"msg\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"success\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"data\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: [</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">1</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">81</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"日本\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"JPN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"Japan\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"81\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">86</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"中国\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"CN\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"China\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"86\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        },</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        {</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">5433</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"parentAreaId\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(9, 134, 88);\">0</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"areaName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"美属萨摩亚\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryAbbreviation\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"US\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryEnglishName\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"America\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">,</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">            </span><span class=\"colour\" style=\"color: rgb(163, 21, 21);\">\"countryPhoneCode\"</span><span class=\"colour\" style=\"color: rgb(0, 0, 0);\">: </span><span class=\"colour\" style=\"color: rgb(4, 81, 165);\">\"001\"</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">        }</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">    ]</span>\n<span class=\"colour\" style=\"color: rgb(0, 0, 0);\">}</span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"parentAreaId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/publicArea/getPublicAreaList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"publicArea",
+												"getPublicAreaList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "门店区域列表",
+					"item": [
+						{
+							"name": "门店区域列表-获取父节点正常",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pid\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getAreaListByPid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getAreaListByPid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "门店区域列表-获取子节点正常",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pid\": 45307\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/publicArea/getAreaListByPid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"publicArea",
+										"getAreaListByPid"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "时间方案管理",
+			"item": [
+				{
+					"name": "方案列表(不分页列表)",
+					"item": [
+						{
+							"name": "方案列表(不分页列表)-正常返回时间方案",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7842771a-4727-4c1a-8bcc-a3b5c2fe7ed7",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessTimeType\": 1\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeAll",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeAll"
+									]
+								},
+								"description": "营业时间方案：businessTimeRuleId，    枚举值定义参数为businessTimeRuleId，如与数据库字典冲突，以枚举字典为准\n\n<br>\n<span class=\"colour\" style=\"color:rgb(136, 19, 145)\">配送时间方案： dispatchRuleId， </span>枚举值定义参数为<span class=\"colour\" style=\"color:rgb(136, 19, 145)\">dispatchRuleId</span>，如与数据库字典冲突，以枚举字典为准<span class=\"colour\" style=\"color:rgb(136, 19, 145)\"></span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "方案列表(不分页列表)-正常返回配送方案",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bb38cba1-56cf-4d74-b9a3-12d7ff1423d4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessTimeType\": 2\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeAll",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeAll"
+									]
+								},
+								"description": "营业时间方案：businessTimeRuleId，    枚举值定义参数为businessTimeRuleId，如与数据库字典冲突，以枚举字典为准\n\n<br>\n<span class=\"colour\" style=\"color:rgb(136, 19, 145)\">配送时间方案： dispatchRuleId， </span>枚举值定义参数为<span class=\"colour\" style=\"color:rgb(136, 19, 145)\">dispatchRuleId</span>，如与数据库字典冲突，以枚举字典为准<span class=\"colour\" style=\"color:rgb(136, 19, 145)\"></span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeAll",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeAll"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "方案详情",
+					"item": [
+						{
+							"name": "方案详情-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bd94b27d-56ee-485e-9c6b-491d754ff417",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 115\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeInfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeInfo"
+									]
+								},
+								"description": "{\n  \"businessTimeCode\": \"P00001\",\n  \"businessTimeName\": \"AA运营时间方案\",\n  \"businessTimeType\": 1,\n  \"businessTimeRule\": [\n    {\n      \"days\": \"1,2,3\",\n      \"rules\": \"[\"9:00\",\"22:00\"]\",\n      \"status\": \"2\"\n    },\n    {\n      \"days\": \"4,5,6\",\n      \"rules\": \"[\"10:00\",\"22:00\"]\",\n      \"status\": \"1\"\n    }\n  ]\n}"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeCode\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeInfo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "添加方案",
+					"item": [
+						{
+							"name": "添加方案-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "21e005f7-d522-476f-8e5b-3d2528216944",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessTimeName\": \"SZ配送时间方案test\",\n    \"businessTimeType\": 2,\n    \"businessTimeRule\": [\n        {\n            \"days\": \"1,2,3\",\n            \"rules\": [\"09:00\", \"22:00\"],\n            \"status\": \"1\"\n        },\n        {\n            \"days\": \"4,5,6\",\n            \"rules\": [\"10:00\", \"22:00\"],\n            \"status\": \"1\"\n        },\n        {\n            \"days\": \"7\",\n            \"rules\": [\"10:00\", \"22:00\"],\n            \"status\": \"2\"\n        }\n    ]\n}\n",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/addStoreBusinessTimeInfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"addStoreBusinessTimeInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeRuleName\": \"<string>\",\n    \"businessTimeRuleType\": \"<integer>\",\n    \"businessTimeRule\": [\n        {\n            \"days\": \"<string>\",\n            \"rules\": \"<string>\",\n            \"status\": \"<string>\"\n        },\n        {\n            \"days\": \"<string>\",\n            \"rules\": \"<string>\",\n            \"status\": \"<string>\"\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/addStoreBusinessTimeInfo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"addStoreBusinessTimeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "编辑方案",
+					"item": [
+						{
+							"name": "编辑方案-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a73ee161-6d28-45a6-951c-89143524829d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessTimeType\": \"2\",\n    \"businessTimeName\": \"SZ配送时间方案test\",\n    \"businessTimeRule\": [\n        {\n            \"days\": \"1,2,3\",\n            \"rules\": [\n                \"09:00\",\n                \"22:00\"\n            ],\n            \"status\": \"1\"\n        },\n        {\n            \"days\": \"4,5,6\",\n            \"rules\": [\n                \"10:00\",\n                \"22:00\"\n            ],\n            \"status\": \"1\"\n        },\n        {\n            \"days\": \"7\",\n            \"rules\": [],\n            \"status\": \"2\"\n        }\n    ],\n    \"businessTimeCode\": \"P000017\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/modifyStoreBusinessTimeInfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"modifyStoreBusinessTimeInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeRule\": {\n        \"days\": \"<string>\",\n        \"rules\": \"<string>\",\n        \"status\": \"<string>\"\n    },\n    \"businessTimeCode\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/editStoreBusinessTimeInfo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"editStoreBusinessTimeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "删除方案",
+					"item": [
+						{
+							"name": "删除方案-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c7a01a73-d7dc-41b3-b935-d5a58201fd51",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"businessTimeCode\": [\n        \"P000016\"\n    ]\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/delStoreBusinessTimeInfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"delStoreBusinessTimeInfo"
+									]
+								},
+								"description": "删除需要多条数据批量删除~~~~"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"businessTimeRuleCode\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/delStoreBusinessTimeInfo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"delStoreBusinessTimeInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "方案列表",
+					"item": [
+						{
+							"name": "方案列表-正常返回-默认",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03618ca5-0ce6-459b-9905-ba77f669a559",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageSize\": 10,\n    \"pageNum\": 1,\n    \"businessTimeCode\": \"\",\n    \"businessTimeName\": \"\",\n    \"businessTimeType\": 0\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageSize\": \"<integer>\",\n    \"pageNum\": \"<integer>\",\n    \"businessTimeCode\": \"<string>\",\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "方案列表-正常返回-按方案编号搜索",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8aea9cf3-d9c1-4300-ba3f-f24cf7c4533a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageSize\": 10,\n    \"pageNum\": 1,\n    \"businessTimeCode\": \"P000014\",\n    \"businessTimeName\": \"\",\n    \"businessTimeType\": 0\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageSize\": \"<integer>\",\n    \"pageNum\": \"<integer>\",\n    \"businessTimeCode\": \"<string>\",\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "方案列表-正常返回-按方案名称搜索",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ddf655b7-aa7f-476b-ab5c-60e0a1142c6a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageSize\": 10,\n    \"pageNum\": 1,\n    \"businessTimeCode\": \"\",\n    \"businessTimeName\": \"方案\",\n    \"businessTimeType\": 0\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageSize\": \"<integer>\",\n    \"pageNum\": \"<integer>\",\n    \"businessTimeCode\": \"<string>\",\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "方案列表-正常返回-按方案类型搜索1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c0d0d3c9-00a6-4b0f-8981-6f4195b5f25b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageSize\": 10,\n    \"pageNum\": 1,\n    \"businessTimeCode\": \"\",\n    \"businessTimeName\": \"\",\n    \"businessTimeType\": 1\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageSize\": \"<integer>\",\n    \"pageNum\": \"<integer>\",\n    \"businessTimeCode\": \"<string>\",\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "方案列表-正常返回-按方案类型搜索2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "73f98c7a-35ee-4a75-b930-102fefcb9595",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageSize\": 10,\n    \"pageNum\": 1,\n    \"businessTimeCode\": \"\",\n    \"businessTimeName\": \"\",\n    \"businessTimeType\": 2\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"businessTimeManage",
+										"getStoreBusinessTimeList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageSize\": \"<integer>\",\n    \"pageNum\": \"<integer>\",\n    \"businessTimeCode\": \"<string>\",\n    \"businessTimeName\": \"<string>\",\n    \"businessTimeType\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/businessTimeManage/getStoreBusinessTimeList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"businessTimeManage",
+												"getStoreBusinessTimeList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "门店信息管理",
+			"item": [
+				{
+					"name": "添加门店",
+					"item": [
+						{
+							"name": "添加门店-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b6dc24fc-918c-4694-9294-187745cc5b9b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"departId\": \"45649\",\n    \"status\": \"1\",\n    \"countryId\": 86,\n    \"provinceId\": 150000,\n    \"cityId\": 150700,\n    \"districtId\": 150727,\n    \"storeMallType\": \"3\",\n    \"isManyStalls\": \"1\",\n    \"stallList\": [\n        {\n            \"stallId\": 0,\n            \"stallLocation\": \"112\",\n            \"stallName\": \"32\",\n            \"stallTypeCode\": \"PD_S_001\",\n            \"stallTypeName\": \"茶饮\"\n        }\n    ],\n    \"brandId\": \"26000252\",\n    \"storeCompanyId\": \"5627151\",\n    \"operationType\": \"2\",\n    \"businessTypeId\": \"3\",\n    \"isSupplyEatIn\": \"1\",\n    \"isSupplyOthersSell\": \"1\",\n    \"othersSellTypes\": [\n        \"2\",\n        \"1\"\n    ],\n    \"dispatchRuleId\": 136,\n    \"businessTimeRuleId\": 135,\n    \"isSupplyPreOrder\": \"1\",\n    \"isSupplyAutoOrder\": \"1\",\n    \"isWarmUpTime\": \"2\",\n    \"dispatchRules\": [\n        {\n            \"rangeType\": \"1\",\n            \"fee\": \"54\",\n            \"coordinate\": [\n                {\n                    \"lng\": 116.65709,\n                    \"lat\": 39.98933\n                },\n                {\n                    \"lng\": 116.667841,\n                    \"lat\": 39.991351\n                },\n                {\n                    \"lng\": 116.669879,\n                    \"lat\": 39.997053\n                },\n                {\n                    \"lng\": 116.66309,\n                    \"lat\": 40.00133\n                },\n                {\n                    \"lng\": 116.654296,\n                    \"lat\": 39.999277\n                },\n                {\n                    \"lng\": 116.653013,\n                    \"lat\": 39.993705\n                }\n            ],\n            \"radius\": 0\n        }\n    ],\n    \"foodLicensePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321713730-byz.png\"\n        }\n    ],\n    \"businessLicensePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321716218-byz.png\"\n        }\n    ],\n    \"storeFireMapPics\": [\n        {\n            \"picUrl\": \"test-pd/1597321718912-byz.png\"\n        }\n    ],\n    \"storePlanePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321721243-byz.png\"\n        }\n    ],\n    \"storeName\": \"测试门店一\",\n    \"departAreaId\": \"45305\",\n    \"departAreaName\": \"华北\",\n    \"storeCode\": \"XNHNSZ0012\",\n    \"departName\": \"喜年贡茶大浪店\",\n    \"storeTelNumber\": \"55555555555\",\n    \"customerHotLine\": \"555555555\",\n    \"contactPerson\": \"负责人\",\n    \"contactPhone\": \"13455555555\",\n    \"contactEmail\": \"test@pin-dao.cn\",\n    \"countryName\": \"中国\",\n    \"provinceName\": \"内蒙古自治区\",\n    \"cityName\": \"呼伦贝尔市\",\n    \"districtName\": \"新巴尔虎右旗\",\n    \"lng\": 116.66209,\n    \"lat\": 39.99533,\n    \"storeAddress\": \"北京市通州区宋庄镇寨草路东郊森林公园华北树木园\",\n    \"storeMallName\": \"火车站\",\n    \"buildingAcreage\": \"455\",\n    \"buildingUseAcreage\": \"453\",\n    \"seatNum\": \"433\",\n    \"brandName\": \"奈雪の茶\",\n    \"storeCompanyName\": \"PINDAO NEW JERSEY LTD（美国公司）\",\n    \"businessTypeName\": \"奈雪礼物店\",\n    \"undefined\": \"外卖\",\n    \"preOpeningTime\": \"2020-08-13\",\n    \"openTime\": \"2020-08-13\",\n    \"closeTime\": \"2020-08-13\",\n    \"businessTimeRuleName\": \"配置一个方案\",\n    \"dispatchRuleName\": \"陪审制\",\n    \"dispatchMinPrice\": \"32\",\n    \"stallDeletedIds\": []\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/addStore",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"addStore"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"storeName\": \"<string>\",\n    \"contactPersonName\": \"<string>\",\n    \"contactPhone\": \"<string>\",\n    \"countryId\": \"<integer>\",\n    \"proviceId\": \"<integer>\",\n    \"cityId\": \"<integer>\",\n    \"lng\": \"<number>\",\n    \"lat\": \"<number>\",\n    \"districtId\": \"<integer>\",\n    \"storeAddress\": \"<string>\",\n    \"brandId\": \"<integer>\",\n    \"businessTypeId\": \"<string>\",\n    \"isSupplyEatIn\": \"<integer>\",\n    \"isSupplyDispatch\": \"<integer>\",\n    \"isSupplyOthersSell\": \"<integer>\",\n    \"operationType\": \"<integer>\",\n    \"isSupplyPreOrder\": \"<integer>\",\n    \"isSupplyAutoOrder\": \"<integer>\",\n    \"isWarmUpTime\": \"<integer>\",\n    \"dispatchRuleType\": \"<integer>\",\n    \"dispatchMinPrice\": \"<number>\",\n    \"dispatchRules\": {\n        \"coordinate\": {\n            \"lng\": \"<string>\",\n            \"lat\": \"<string>\"\n        },\n        \"rangeType\": \"<integer>\",\n        \"fee\": \"<number>\"\n    },\n    \"departId\": \"<integer>\",\n    \"departCode\": \"<string>\",\n    \"departAreaId\": \"<integer>\",\n    \"storeTelNumber\": \"<string>\",\n    \"customerHotLine\": \"<string>\",\n    \"contactEmail\": \"<string>\",\n    \"countryName\": \"<string>\",\n    \"proviceName\": \"<string>\",\n    \"cityName\": \"<string>\",\n    \"districtName\": \"<string>\",\n    \"storeMallType\": \"<integer>\",\n    \"storeMallName\": \"<string>\",\n    \"buildingAcreage\": \"<number>\",\n    \"buildingUseAcreage\": \"<number>\",\n    \"seatNum\": \"<number>\",\n    \"isLift\": \"<integer>\",\n    \"isManyStalls\": \"<integer>\",\n    \"stallList\": {\n        \"stallLocation\": \"<string>\",\n        \"stallName\": \"<string>\",\n        \"stallTypeCode\": \"<integer>\",\n        \"stallTypeName\": \"<string>\"\n    },\n    \"brandName\": \"<string>\",\n    \"storeCompanyId\": \"<integer>\",\n    \"businessTypeName\": \"<string>\",\n    \"othersSellTypes\": \"<string>\",\n    \"preOpeningTime\": \"<string>\",\n    \"preOperningEndTime\": \"<string>\",\n    \"openTime\": \"<string>\",\n    \"closeTime\": \"<string>\",\n    \"dispatchRuleId\": \"<integer>\",\n    \"qrCode\": \"<string>\",\n    \"businessTimeRuleId\": \"<integer>\",\n    \"foodLicensePics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"businessLicensePics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"storeFireMapPics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"storePlanePics\": {\n        \"picUrl\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/addStore",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"addStore"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "编辑门店",
+					"item": [
+						{
+							"name": "编辑门店-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "69dd4465-0bd3-458d-ae22-0864b514d44f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 26053915,\n    \"storeName\": \"测试门店一\",\n    \"departAreaId\": \"45305\",\n    \"departAreaName\": \"华北\",\n    \"departId\": \"45649\",\n    \"storeCode\": \"XNHNSZ0012\",\n    \"storeTelNumber\": \"55555555555\",\n    \"customerHotLine\": \"555555555\",\n    \"contactPerson\": \"负责人11\",\n    \"contactPhone\": \"13455555555\",\n    \"contactEmail\": \"test@pin-dao.cn\",\n    \"statusStr\": \"\",\n    \"status\": \"1\",\n    \"countryId\": \"86\",\n    \"countryName\": \"中国\",\n    \"provinceId\": \"150000\",\n    \"provinceName\": \"内蒙古自治区\",\n    \"cityId\": \"150700\",\n    \"cityName\": \"呼伦贝尔市\",\n    \"districtId\": \"150727\",\n    \"districtName\": \"新巴尔虎右旗\",\n    \"isSupplyDispatch\": 2,\n    \"lng\": 116.66209,\n    \"lat\": 39.99533,\n    \"storeMallType\": \"3\",\n    \"storeMallName\": \"\",\n    \"storeAddress\": \"北京市通州区宋庄镇寨草路东郊森林公园华北树木园\",\n    \"buildingAcreage\": 455,\n    \"buildingUseAcreage\": 453,\n    \"seatNum\": 433,\n    \"fullName\": \"测试门店一\",\n    \"isManyStalls\": 1,\n    \"stallList\": [\n        {\n            \"stallId\": 72,\n            \"stallLocation\": \"112\",\n            \"stallName\": \"32\",\n            \"stallTypeCode\": \"PD_S_001\",\n            \"stallTypeName\": \"茶饮\"\n        },\n        {\n            \"stallId\": 0,\n            \"stallLocation\": \"22\",\n            \"stallName\": \"11\",\n            \"stallTypeCode\": \"PD_S_001\",\n            \"stallTypeName\": \"茶饮\"\n        }\n    ],\n    \"brandId\": \"26000252\",\n    \"brandName\": \"奈雪の茶\",\n    \"storeCompanyId\": \"5627151\",\n    \"storeCompanyName\": \"\",\n    \"qrCode\": \"\",\n    \"businessTypeId\": \"3\",\n    \"businessTypeName\": \"\",\n    \"operationType\": \"2\",\n    \"isSupplyEatIn\": \"1\",\n    \"isSupplyOthersSell\": \"1\",\n    \"othersSellTypes\": [\n        \"2\",\n        \"1\"\n    ],\n    \"preOpeningTime\": \"2020-08-13\",\n    \"preOpeningEndTime\": \"\",\n    \"openTime\": \"2020-08-13\",\n    \"closeTime\": \"2020-08-13\",\n    \"businessTimeRuleId\": 135,\n    \"dispatchRuleId\": 136,\n    \"dispatchMinPrice\": 32,\n    \"dispatchRules\": [\n        {\n            \"id\": 74,\n            \"coordinate\": [\n                {\n                    \"lat\": \"39.98933\",\n                    \"lng\": \"116.65709\"\n                },\n                {\n                    \"lat\": \"39.991351\",\n                    \"lng\": \"116.667841\"\n                },\n                {\n                    \"lat\": \"39.997053\",\n                    \"lng\": \"116.669879\"\n                },\n                {\n                    \"lat\": \"40.00133\",\n                    \"lng\": \"116.66309\"\n                },\n                {\n                    \"lat\": \"39.999277\",\n                    \"lng\": \"116.654296\"\n                },\n                {\n                    \"lat\": \"39.993705\",\n                    \"lng\": \"116.653013\"\n                }\n            ],\n            \"rangeType\": 1,\n            \"radius\": 0,\n            \"fee\": 54\n        }\n    ],\n    \"isSupplyAutoOrder\": \"1\",\n    \"isSupplyPreOrder\": \"1\",\n    \"isWarmUpTime\": \"2\",\n    \"picUrlHost\": \"http://test-pd.oss-cn-beijing.aliyuncs.com\",\n    \"foodLicensePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321713730-byz.png\"\n        }\n    ],\n    \"businessLicensePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321716218-byz.png\"\n        }\n    ],\n    \"storeFireMapPics\": [\n        {\n            \"picUrl\": \"test-pd/1597321718912-byz.png\"\n        }\n    ],\n    \"storePlanePics\": [\n        {\n            \"picUrl\": \"test-pd/1597321721243-byz.png\"\n        }\n    ],\n    \"businessTimeRuleName\": \"配置一个方案\",\n    \"dispatchRuleName\": \"陪审制\",\n    \"stallDeletedIds\": [],\n    \"storeId\": 26053915\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/modifyStore",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"modifyStore"
+									]
+								},
+								"description": "{\n    code:0\n    message:\"success\"\n    data:{\n    }\n}"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"storeName\": \"<string>\",\n    \"contactPersonName\": \"<string>\",\n    \"contactPhone\": \"<string>\",\n    \"countryId\": \"<integer>\",\n    \"proviceId\": \"<integer>\",\n    \"cityId\": \"<integer>\",\n    \"lng\": \"<number>\",\n    \"lat\": \"<number>\",\n    \"districtId\": \"<integer>\",\n    \"storeAddress\": \"<string>\",\n    \"brandId\": \"<integer>\",\n    \"businessTypeId\": \"<string>\",\n    \"isSupplyEatIn\": \"<integer>\",\n    \"isSupplyDispatch\": \"<integer>\",\n    \"isSupplyOthersSell\": \"<integer>\",\n    \"operationType\": \"<integer>\",\n    \"isSupplyPreOrder\": \"<integer>\",\n    \"isSupplyAutoOrder\": \"<integer>\",\n    \"isWarmUpTime\": \"<integer>\",\n    \"dispatchRuleType\": \"<integer>\",\n    \"dispatchMinPrice\": \"<number>\",\n    \"dispatchRules\": {\n        \"coordinate\": {\n            \"lng\": \"<string>\",\n            \"lat\": \"<string>\"\n        },\n        \"rangeType\": \"<integer>\",\n        \"fee\": \"<number>\"\n    },\n    \"id\": \"<integer>\",\n    \"departId\": \"<integer>\",\n    \"departCode\": \"<string>\",\n    \"departAreaId\": \"<integer>\",\n    \"storeTelNumber\": \"<string>\",\n    \"customerHotLine\": \"<string>\",\n    \"contactEmail\": \"<string>\",\n    \"countryName\": \"<string>\",\n    \"proviceName\": \"<string>\",\n    \"cityName\": \"<string>\",\n    \"districtName\": \"<string>\",\n    \"storeMallType\": \"<integer>\",\n    \"storeMallName\": \"<string>\",\n    \"buildingAcreage\": \"<number>\",\n    \"buildingUseAcreage\": \"<number>\",\n    \"seatNum\": \"<number>\",\n    \"isLift\": \"<integer>\",\n    \"isManyStalls\": \"<integer>\",\n    \"stallList\": {\n        \"stallId\": \"<integer>\",\n        \"stallName\": \"<string>\",\n        \"stallTypeCode\": \"<integer>\",\n        \"stallTypeName\": \"<string>\",\n        \"stallLocation\": \"<string>\"\n    },\n    \"brandName\": \"<string>\",\n    \"storeCompanyId\": \"<integer>\",\n    \"businessTypeName\": \"<string>\",\n    \"othersSellTypes\": \"<string>\",\n    \"preOpeningTime\": \"<string>\",\n    \"preOperningEndTime\": \"<string>\",\n    \"openTime\": \"<string>\",\n    \"closeTime\": \"<string>\",\n    \"dispatchRuleId\": \"<integer>\",\n    \"qrCode\": \"<string>\",\n    \"businessTimeRuleId\": \"<integer>\",\n    \"foodLicensePics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"businessLicensePics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"storeFireMapPics\": {\n        \"picUrl\": \"<string>\"\n    },\n    \"storePlanePics\": {\n        \"picUrl\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/addStore_1596702078319",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"addStore_1596702078319"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "门店列表",
+					"item": [
+						{
+							"name": "门店列表-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "85d325fb-5a87-415c-9aa3-8daec02fb0bc",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 1,\n    \"pageSize\": 10,\n    \"storeName\": \"测试门店一\",\n    \"storeCode\": \"XNHNSZ0012\",\n    \"status\": 0,\n    \"businessTypeId\": \"\",\n    \"countryId\": 86,\n    \"departAreaId\": 0,\n    \"provinceId\": 0,\n    \"cityId\": 0,\n    \"brandId\": 0,\n    \"businessTimeRuleId\": \"\",\n    \"dispatchRuleId\": \"\",\n    \"storeAddress\": \"\",\n    \"isManyStalls\": 0,\n    \"isSupplyPreOrder\": 0,\n    \"isSupplyAutoOrder\": 0,\n    \"operationType\": 0,\n    \"isSupplyEatIn\": 0,\n    \"isSupplyDispatch\": 0,\n    \"isWarmUpTime\": 0,\n    \"storeCompanyId\": \"\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/getStoreBaseInfoList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"getStoreBaseInfoList"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageNum\": \"<integer>\",\n    \"pageSize\": \"<integer>\",\n    \"storeName\": \"<string>\",\n    \"storeCode\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"businessTypeId\": \"<string>\",\n    \"countryId\": \"<integer>\",\n    \"departAreaId\": \"<integer>\",\n    \"provinceId\": \"<integer>\",\n    \"cityId\": \"<integer>\",\n    \"brandId\": \"<integer>\",\n    \"businessTimeRuleId\": \"<string>\",\n    \"dispatchRuleId\": \"<string>\",\n    \"storeAddress\": \"<string>\",\n    \"isManyStalls\": \"<integer>\",\n    \"isSupplyPreOrder\": \"<integer>\",\n    \"isSupplyAutoOrder\": \"<integer>\",\n    \"operationType\": \"<integer>\",\n    \"isSupplyEatIn\": \"<integer>\",\n    \"isSupplyDispatch\": \"<integer>\",\n    \"isWarmUpTime\": \"<integer>\",\n    \"storeCompanyId\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/getStoreBaseInfoList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"getStoreBaseInfoList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "门店详情",
+					"item": [
+						{
+							"name": "门店详情-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67386fe0-3dbe-4610-b208-6d2b843bafe2",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"storeId\": 26053915\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/getStoreInfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"getStoreInfo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"storeId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/getStoreInfo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"getStoreInfo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "schema type not provided"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "门店档口删除接口",
+					"item": [
+						{
+							"name": "门店档口删除接口-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c8f3b240-fcd8-4505-91d2-c0a7767eeaeb",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"stallId\": 1\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/deleteStall",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"deleteStall"
+									]
+								},
+								"description": "{\n    code : 0,\n    message : success\n\n}"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"stallId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/deleteStall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"deleteStall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "更新门店状态",
+					"item": [
+						{
+							"name": "更新门店状态-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8142996c-8939-43bc-9cef-055d1f661589",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"storeId\": 26003707,\n    \"statusButton\": 4\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeBaseInfo/updateStoreStatus",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeBaseInfo",
+										"updateStoreStatus"
+									]
+								},
+								"description": "状态按钮 1:验收,2:开业,3:停业"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"storeId\": \"<integer>\",\n    \"statusButton\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeBaseInfo/updateStoreStatus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeBaseInfo",
+												"updateStoreStatus"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "门店部门列表",
+					"item": [
+						{
+							"name": "门店部门列表-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "528dc126-cee9-4b89-820f-70ea314654a7",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/depart/departList?departName=贵阳",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"depart",
+										"departList"
+									],
+									"query": [
+										{
+											"key": "departName",
+											"value": "贵阳",
+											"description": "部门名称"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/depart/departList?departName=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"depart",
+												"departList"
+											],
+											"query": [
+												{
+													"key": "departName",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取公司列表",
+					"item": [
+						{
+							"name": "获取公司列表-正常返回",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b2adc521-e3bd-40a2-8d7f-576c82ee17c7",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"storeCompanyName\": \"\",\n    \"storeCompanyId\": 100092\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/storeServer/store/storeCompany/getStoreCompanyInfoList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"storeServer",
+										"store",
+										"storeCompany",
+										"getStoreCompanyInfoList"
+									]
+								},
+								"description": "<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">{</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"code\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(9, 134, 88)\">200</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"msg\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"success\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"data\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: [</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">        {</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">            </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"storeCompanyId\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(9, 134, 88)\">1</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">            </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"storeCompanyName\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"品道集团\"</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">        },</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">        {</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">            </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"storeCompanyId\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(9, 134, 88)\">100092</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">,</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">            </span><span class=\"colour\" style=\"color:rgb(163, 21, 21)\">\"storeCompanyName\"</span><span class=\"colour\" style=\"color:rgb(0, 0, 0)\">: </span><span class=\"colour\" style=\"color:rgb(4, 81, 165)\">\"深圳市奈雪餐饮管理有限公司\"</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">        }</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">    ]</span>\n<span class=\"colour\" style=\"color:rgb(0, 0, 0)\">}</span>"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"storeCompanyName\": \"<string>\",\n    \"storeCompanyId\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/storeServer/store/storeCompany/getCompanyInfoList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"storeServer",
+												"store",
+												"storeCompany",
+												"getCompanyInfoList"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

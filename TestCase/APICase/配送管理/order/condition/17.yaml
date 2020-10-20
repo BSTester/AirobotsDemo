@@ -1,0 +1,22 @@
+config:
+    base_url: $base_url
+    name: 门店条件列表-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: $baseUrl/order/condition/store
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            keyWord: 测试
+        method: POST
+        url: $baseUrl/order/condition/store
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

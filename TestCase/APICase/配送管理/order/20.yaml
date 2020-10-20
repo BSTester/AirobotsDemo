@@ -1,0 +1,19 @@
+config:
+    base_url: $base_url
+    name: 导出配送单列表Excel-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: $baseUrl/order/exportDeliveryOrderListExcel
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            filename: 配送订单管理列表
+        method: POST
+        url: $baseUrl/order/exportDeliveryOrderListExcel
+    validate:
+    -   eq:
+        - status_code
+        - 200

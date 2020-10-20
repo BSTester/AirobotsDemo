@@ -1,0 +1,19 @@
+config:
+    base_url: $base_url
+    name: 取消入职回调接口 - 正常返回 - 门店
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: $baseUrl/ivva/callbackCancelEntry?recruitId=723237&resumeId=1819337&positionId=10499&isSchoolRecruit=0&status=2
+    request:
+        headers: {}
+        json: {}
+        method: POST
+        url: $baseUrl/ivva/callbackCancelEntry?recruitId=723237&resumeId=1819337&positionId=10499&isSchoolRecruit=0&status=2
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.success
+        - true

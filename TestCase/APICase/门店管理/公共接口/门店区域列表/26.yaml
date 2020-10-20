@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: 门店区域列表-获取子节点正常
+    variables:
+        baseUrl: /
+teststeps:
+-   name: storeServer/store/publicArea/getAreaListByPid
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            pid: 45307
+        method: POST
+        url: storeServer/store/publicArea/getAreaListByPid
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

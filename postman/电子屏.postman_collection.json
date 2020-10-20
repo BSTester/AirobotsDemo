@@ -1,0 +1,2794 @@
+{
+	"info": {
+		"_postman_id": "f139bd6f-522a-4031-9e8d-993765f96c8a",
+		"name": "电子屏",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "注册设备校验",
+			"item": [
+				{
+					"name": "注册设备验证-设备已注册",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \" 8S48Z_E382W_107717a491e1118\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/checkDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"checkDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceMac\": \"anim Excepteur non\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/checkDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"checkDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "注册设备验证-设备未注册，不存在",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"anim Excepteur non\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/checkDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"checkDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceMac\": \"anim Excepteur non\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/checkDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"checkDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "注册设备",
+			"item": [
+				{
+					"name": "注册设备-第一次注册",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e8\",\n    \"deviceRatio\": \"1280*720\",\n    \"deviceSpec\": \"8.0*4.5\",\n    \"fkPlanScreenTypeId\": 27522606,\n    \"fkStoreId\": 26003697,\n    \"screenTypeName\": \"水吧主屏\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/registDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"registDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/registDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"registDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "注册设备 -设备已被注册",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e6\",\n    \"deviceRatio\": \"1280*720\",\n    \"deviceSpec\": \"8.0*4.5\",\n    \"fkPlanScreenTypeId\": 27522606,\n    \"fkStoreId\": 26003697,\n    \"screenTypeName\": \"水吧主屏\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/registDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"registDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/registDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"registDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "移动端心跳检测",
+			"item": [
+				{
+					"name": "移动端心跳检测-设备存在",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e4\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/mobile-heartStone",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"mobile-heartStone"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/mobile-heartStone",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"mobile-heartStone"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "移动端心跳检测-设备不存在",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e1118\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/mobile-heartStone",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"mobile-heartStone"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/mobile-heartStone",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"mobile-heartStone"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "移动端获取执行计划列表详情",
+			"item": [
+				{
+					"name": "移动端获取执行计划列表详情-mac有对应投放计划",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e4\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/mobile-listPlanDetail",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"mobile-listPlanDetail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/mobile-listPlanDetail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"mobile-listPlanDetail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "移动端获取执行计划列表详情-mac没有对应投放计划",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e48e0ed-871c-422d-9d3e-4ae1ce74d1c0",
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql([]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"1118S48Z_E382W_107717a491e4\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/mobile-listPlanDetail",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"mobile-listPlanDetail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/mobile-listPlanDetail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"mobile-listPlanDetail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "编辑设备",
+			"item": [
+				{
+					"name": "修改设备-修改成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceMac\": \"8S48Z_E382W_107717a491e47\",\n    \"deviceRatio\": \"1280*720\",\n    \"deviceSpec\": \"8.0*4.5\",\n    \"fkPlanScreenTypeId\": 27522606,\n    \"fkStoreId\": 26003697,\n    \"screenTypeName\": \"水吧广告屏\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/updateDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"updateDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/updateDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"updateDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "设备列表",
+			"item": [
+				{
+					"name": "设备列表查询-查询成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": 26000252, \n    \"areaId\": 4,\n    \"screenTypeName\": \"水吧菜单主屏\",\n    \"deviceStatus\": 2\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/deviceList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"deviceList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 17336739,\n    \"areaId\": -18941091,\n    \"cityId\": -62324256,\n    \"storeId\": \"anim\",\n    \"screenTypeName\": \"ut aliqua adipisicing\",\n    \"deviceStatus\": -18631191,\n    \"pageNum\": 46161441,\n    \"pageSize\": 79489046,\n    \"timestamp\": 73139185\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/deviceList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"deviceList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "设备区域（区域划分）",
+			"item": [
+				{
+					"name": "pid取值对应城市，返回成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pid\":1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/getStoreAreaList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"getStoreAreaList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pid\": -81269896\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/getStoreAreaList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"getStoreAreaList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "pid不存在，返回为空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pid\": 9\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/getStoreAreaList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"getStoreAreaList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pid\": -81269896\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/getStoreAreaList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"getStoreAreaList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "门店区域数组",
+			"item": [
+				{
+					"name": "存在的品牌id-返回区域门店成功",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/storeAreaList?brandId=26000252",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"storeAreaList"
+							],
+							"query": [
+								{
+									"key": "brandId",
+									"value": "26000252",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/storeAreaList?brandId=et",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"storeAreaList"
+									],
+									"query": [
+										{
+											"key": "brandId",
+											"value": "et"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "不存在的品牌id-返回为空",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/storeAreaList?brandId=26000142",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"storeAreaList"
+							],
+							"query": [
+								{
+									"key": "brandId",
+									"value": "26000142",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/storeAreaList?brandId=et",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"storeAreaList"
+									],
+									"query": [
+										{
+											"key": "brandId",
+											"value": "et"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "设备列表导出",
+			"item": [
+				{
+					"name": "导出设备列表成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": 26000402\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/exportDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"exportDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": \"exercitation sunt cupidat\",\n    \"fkAreaId\": \"fugiat labore irure est\",\n    \"fkCityId\": \"sunt qui elit mag\",\n    \"storeName\": \"in\",\n    \"deviceStatus\": 95516721,\n    \"pageNum\": \"in\",\n    \"pageSize\": \"ipsum Ut\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/exportDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"exportDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取投放计划列表",
+			"item": [
+				{
+					"name": "按10页展示，查询第一页，返回总数为0",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": 1,\n    \"pageSize\": 10,\n    \"planName\": \"\",\n    \"planTypeId\": \"\",\n    \"brandId\":\"\",\n    \"screenId\": \"\",\n    \"startTime\": \"\",\n    \"endTime\": \"\",\n    \"planStatus\": \"\",\n    \"startEndTime\": [],\n    \"deviceMac\": \"\",\n    \"storeId\":\"\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 98944605,\n    \"pageSize\": 10825455,\n    \"planName\": \"in\",\n    \"planTypeId\": \"nostrud nulla\",\n    \"brandId\": 49545500,\n    \"screenId\": -27385128,\n    \"startTime\": \"amet incididunt labore\",\n    \"endTime\": \"sint ea\",\n    \"planStatus\": 37199958,\n    \"startEndTime\": [\n        \"anim incididunt\",\n        \"ut\"\n    ],\n    \"deviceMac\": \"Ut eu\",\n    \"storeId\": 17789073\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "按10页展示，查询第1页，其他字段都默认空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": \"1\",\n    \"pageSize\":10,\n    \"planName\": \"\",\n    \"planTypeId\": \" \",\n    \"brandId\": \"\",\n    \"screenId\": \"\",\n    \"planStatus\":\"\",\n    \"startEndTime\": [],\n    \"deviceMac\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 98944605,\n    \"pageSize\": 10825455,\n    \"planName\": \"in\",\n    \"planTypeId\": \"nostrud nulla\",\n    \"brandId\": 49545500,\n    \"screenId\": -27385128,\n    \"startTime\": \"amet incididunt labore\",\n    \"endTime\": \"sint ea\",\n    \"planStatus\": 37199958,\n    \"startEndTime\": [\n        \"anim incididunt\",\n        \"ut\"\n    ],\n    \"deviceMac\": \"Ut eu\",\n    \"storeId\": 17789073\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "按10页展示，查询第1页",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": \"1\",\n    \"pageSize\":10,\n    \"planName\": \"\",\n    \"planTypeId\": \"1\",\n    \"brandId\": \"\",\n    \"screenId\": \"\",\n    \"planStatus\":\"\",\n    \"startEndTime\": [],\n    \"deviceMac\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 98944605,\n    \"pageSize\": 10825455,\n    \"planName\": \"in\",\n    \"planTypeId\": \"nostrud nulla\",\n    \"brandId\": 49545500,\n    \"screenId\": -27385128,\n    \"startTime\": \"amet incididunt labore\",\n    \"endTime\": \"sint ea\",\n    \"planStatus\": 37199958,\n    \"startEndTime\": [\n        \"anim incididunt\",\n        \"ut\"\n    ],\n    \"deviceMac\": \"Ut eu\",\n    \"storeId\": 17789073\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "按25页展示，查询第3页",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": \"1\",\n    \"pageSize\":50,\n    \"planName\": \"\",\n    \"planTypeId\": \"1\",\n    \"brandId\": \"\",\n    \"screenId\": \"\",\n    \"planStatus\":\"\",\n    \"startEndTime\": [\n    \n    ],\n    \"deviceMac\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 98944605,\n    \"pageSize\": 10825455,\n    \"planName\": \"in\",\n    \"planTypeId\": \"nostrud nulla\",\n    \"brandId\": 49545500,\n    \"screenId\": -27385128,\n    \"startTime\": \"amet incididunt labore\",\n    \"endTime\": \"sint ea\",\n    \"planStatus\": 37199958,\n    \"startEndTime\": [\n        \"anim incididunt\",\n        \"ut\"\n    ],\n    \"deviceMac\": \"Ut eu\",\n    \"storeId\": 17789073\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "按50页展示，查询第2页",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNum\": \"2\",\n    \"pageSize\":50,\n    \"planName\": \"\",\n    \"planTypeId\": \"1\",\n    \"brandId\": \"\",\n    \"screenId\": \"\",\n    \"planStatus\":\"\",\n    \"startEndTime\": [\n    \n    ],\n    \"deviceMac\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageNum\": 98944605,\n    \"pageSize\": 10825455,\n    \"planName\": \"in\",\n    \"planTypeId\": \"nostrud nulla\",\n    \"brandId\": 49545500,\n    \"screenId\": -27385128,\n    \"startTime\": \"amet incididunt labore\",\n    \"endTime\": \"sint ea\",\n    \"planStatus\": 37199958,\n    \"startEndTime\": [\n        \"anim incididunt\",\n        \"ut\"\n    ],\n    \"deviceMac\": \"Ut eu\",\n    \"storeId\": 17789073\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取品牌列表",
+			"item": [
+				{
+					"name": "获取品牌列表成功",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/brandInfoList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"brandInfoList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/brandInfoList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"brandInfoList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "添加电子屏投放计划",
+			"item": [
+				{
+					"name": "投放计划新增成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪主屏33\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-计划名称为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-投放类型为空，新增失败 Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪222\",\n    \"planTypeId\":\"\",\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-品牌为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪222\",\n    \"planTypeId\":2,\n    \"brandId\":\"\",\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-素材为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪444\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-投放范围为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪主屏33\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [ ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-投放屏幕为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪主屏33\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":\"\",\n    \"startTime\":\"2020-07-07 14:39:50\",\n    \"endTime\":\"2020-09-07 14:39:50\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "投放计划新增-生效时间为空，新增失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planName\":\"奈雪主屏33\",\n    \"planTypeId\":1,\n    \"brandId\":26000252,\n    \"screenId\":1,\n    \"startTime\":\"\",\n    \"endTime\":\"\",\n    \"storeIdList\": [\n        \"NXHBCC0001\",\n        \"NXXBLZ0001\"\n    ],\n    \"fileList\": [\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":0,\n            \"md5\":\"md445445545454\"\n        },\n        {\n            \"mediaType\":1,\n            \"time\":5,\n            \"url\":\"test-pd/1595321398494-2e053d515309139e2f5dbe6f6243823e.png\",\n            \"sequence\":1,\n            \"md5\":\"md445445545455\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/addScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"addScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planName\": \"incididunt qui in laboris\",\n    \"planTypeId\": -4930065,\n    \"brandId\": -28275068,\n    \"screenId\": 92905547,\n    \"startTime\": \"esse sit in\",\n    \"endTime\": \"sed e\",\n    \"storeIdList\": [\n        \"Duis consectetur\",\n        \"cillum commodo\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 27998818,\n            \"time\": -62014875,\n            \"url\": \"dolor minim\",\n            \"sequence\": 70189519,\n            \"md5\": \"quis Excepteur\"\n        },\n        {\n            \"type\": -70849832,\n            \"time\": 81027950,\n            \"url\": \"nulla pariatur adipisicing sunt\",\n            \"sequence\": 89432399,\n            \"md5\": \"magna ea cillum enim\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/addScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"addScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "批量删除电子屏投放计划",
+			"item": [
+				{
+					"name": "投放中计划-不能删除",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planIdList\": [\n        \"NX000057\",\n        \"NX000056\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/batchDeleteScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"batchDeleteScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planIdList\": [\n        \"deserunt ea ad\",\n        \"pariatur Excepteur consequat velit aliquip\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/batchDeleteScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"batchDeleteScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "未生效计划-删除成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planIdList\": [\n        \"LS000048\",\n        \"TG000061\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/batchDeleteScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"batchDeleteScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planIdList\": [\n        \"deserunt ea ad\",\n        \"pariatur Excepteur consequat velit aliquip\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/batchDeleteScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"batchDeleteScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "已结束计划-删除成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planIdList\": [\n        \"NX000046\",\n        \"NX000045\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/batchDeleteScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"batchDeleteScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planIdList\": [\n        \"deserunt ea ad\",\n        \"pariatur Excepteur consequat velit aliquip\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/batchDeleteScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"batchDeleteScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "已取消计划-删除成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planIdList\": [\n        \"LS000047\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/batchDeleteScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"batchDeleteScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planIdList\": [\n        \"deserunt ea ad\",\n        \"pariatur Excepteur consequat velit aliquip\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/batchDeleteScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"batchDeleteScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取屏幕类型列表",
+			"item": [
+				{
+					"name": "获取屏幕列表成功",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenTypeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenTypeList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenTypeList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenTypeList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取素材可选时间列表",
+			"item": [
+				{
+					"name": "获取素材可选时间5s和10s成功",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/timeRuleList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"timeRuleList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/timeRuleList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"timeRuleList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取投放计划详情",
+			"item": [
+				{
+					"name": "获取投放计划详情成功",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanDetail?planId=NX000055",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanDetail"
+							],
+							"query": [
+								{
+									"key": "planId",
+									"value": "NX000055",
+									"description": "(Required) 投放计划编号"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanDetail?planId=et",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanDetail"
+									],
+									"query": [
+										{
+											"key": "planId",
+											"value": "et"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "获取投放计划不存在",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanDetail?planId=NX000088",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanDetail"
+							],
+							"query": [
+								{
+									"key": "planId",
+									"value": "NX000088",
+									"description": "(Required) 投放计划编号"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanDetail?planId=et",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanDetail"
+									],
+									"query": [
+										{
+											"key": "planId",
+											"value": "et"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "编辑投放计划",
+			"item": [
+				{
+					"name": "投放中状态-修改成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"TG000085\",\n    \"planName\": \"哈哈哈\",\n    \"planTypeId\": 1,\n    \"screenId\": 1,\n    \"startTime\": \"2020-07-23 00:00:00\",\n    \"endTime\": \"2020-08-17 00:00:00\",\n    \"storeIdList\": [\n        \"veniam\",\n        \"quis dolore\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": -62030769,\n            \"time\": -65629438,\n            \"url\": \"ipsum\",\n            \"sequence\": 61663119,\n            \"md5\": \"in\"\n        },\n        {\n            \"type\": -8152174,\n            \"time\": -94956455,\n            \"url\": \"Ut et\",\n            \"sequence\": 41376249,\n            \"md5\": \"eiusmod ipsum dolor Ut\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/updateScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"updateScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planId\": \"sint\",\n    \"planName\": \"esse Duis anim reprehenderit\",\n    \"planTypeId\": 69476259,\n    \"screenId\": 51919537,\n    \"startTime\": \"veniam v\",\n    \"endTime\": \"magna aute Lorem\",\n    \"storeIdList\": [\n        \"veniam\",\n        \"do veniam\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 31798464,\n            \"time\": -66257236,\n            \"url\": \"ipsum cupidatat ea\",\n            \"sequence\": 4099434,\n            \"md5\": \"Excepteur\"\n        },\n        {\n            \"type\": -17950726,\n            \"time\": -21547456,\n            \"url\": \"non occaecat pariatur\",\n            \"sequence\": 51444653,\n            \"md5\": \"elit aliqua proident dolore\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/updateScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"updateScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "未生效状态-修改成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"culpa exercitation\",\n    \"planName\": \"velit labore\",\n    \"planTypeId\": 63862459,\n    \"screenId\": -33083056,\n    \"startTime\": \"s\",\n    \"endTime\": \"cupidatat in\",\n    \"storeIdList\": [\n        \"veniam\",\n        \"quis dolore\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": -62030769,\n            \"time\": -65629438,\n            \"url\": \"ipsum\",\n            \"sequence\": 61663119,\n            \"md5\": \"in\"\n        },\n        {\n            \"type\": -8152174,\n            \"time\": -94956455,\n            \"url\": \"Ut et\",\n            \"sequence\": 41376249,\n            \"md5\": \"eiusmod ipsum dolor Ut\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/updateScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"updateScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planId\": \"sint\",\n    \"planName\": \"esse Duis anim reprehenderit\",\n    \"planTypeId\": 69476259,\n    \"screenId\": 51919537,\n    \"startTime\": \"veniam v\",\n    \"endTime\": \"magna aute Lorem\",\n    \"storeIdList\": [\n        \"veniam\",\n        \"do veniam\"\n    ],\n    \"fileList\": [\n        {\n            \"type\": 31798464,\n            \"time\": -66257236,\n            \"url\": \"ipsum cupidatat ea\",\n            \"sequence\": 4099434,\n            \"md5\": \"Excepteur\"\n        },\n        {\n            \"type\": -17950726,\n            \"time\": -21547456,\n            \"url\": \"non occaecat pariatur\",\n            \"sequence\": 51444653,\n            \"md5\": \"elit aliqua proident dolore\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/updateScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"updateScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "导出设备信息excel",
+			"item": [
+				{
+					"name": "导出设备信息成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": 26000402\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/exportDeviceInfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"exportDeviceInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": -1214034,\n    \"areaId\": 24426593,\n    \"cityId\": -75897691,\n    \"storeId\": 10754452,\n    \"screenTypeName\": \"consequat deserunt do eu\",\n    \"deviceStatus\": 17413899,\n    \"pageNum\": -73678342,\n    \"pageSize\": 97156709,\n    \"timestamp\": 50959709\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/storeServer/screen/exportDeviceInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"storeServer",
+										"screen",
+										"exportDeviceInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "获取投放状态列表",
+			"item": [
+				{
+					"name": "获取4种投放状态成功",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/screenPlanStatusList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"screenPlanStatusList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/screen/screenPlanStatusList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"screenPlanStatusList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "取消投放计划",
+			"item": [
+				{
+					"name": "投放中状态-取消成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"NX000049\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/cancelScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"cancelScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planId\": \"Duis sit in\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/cancelScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"cancelScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "未生效状态-取消成功",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"NX000014\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/cancelScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"cancelScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planId\": \"Duis sit in\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/cancelScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"cancelScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "已结束状态-取消失败",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"planId\": \"NX000047\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{baseUrl}}/screen/cancelScreenPlan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{baseUrl}}",
+								"screen",
+								"cancelScreenPlan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"planId\": \"Duis sit in\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/screen/cancelScreenPlan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"screen",
+										"cancelScreenPlan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "/storeServer",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

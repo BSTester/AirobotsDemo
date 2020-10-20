@@ -1,0 +1,19 @@
+config:
+    base_url: ${base_url}
+    name: 导出设备列表成功
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/exportDeviceInfo
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            brandId: 26000402
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/exportDeviceInfo
+    validate:
+    -   eq:
+        - status_code
+        - 201

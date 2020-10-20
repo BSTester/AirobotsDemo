@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: 移动端心跳检测-设备不存在
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/mobile-heartStone
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            deviceMac: 8S48Z_E382W_107717a491e1118
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/mobile-heartStone
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 10001

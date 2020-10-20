@@ -1,0 +1,29 @@
+config:
+    base_url: ${base_url}
+    name: 方案列表-正常返回-按方案名称搜索
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeList
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            businessTimeCode: ''
+            businessTimeName: SZ配送时间方案test
+            businessTimeType: 0
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeList
+    extract:
+        businessTimeCode: body.data.list.0.businessTimeCode
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

@@ -1,0 +1,46 @@
+config:
+    base_url: ${base_url}
+    name: 门店列表-正常返回
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: ${base_url}/storeServer/store/storeBaseInfo/getStoreBaseInfoList
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            brandId: 0
+            businessTimeRuleId: ''
+            businessTypeId: ''
+            cityId: 0
+            countryId: 86
+            departAreaId: 0
+            dispatchRuleId: ''
+            isManyStalls: 0
+            isSupplyAutoOrder: 0
+            isSupplyDispatch: 0
+            isSupplyEatIn: 0
+            isSupplyPreOrder: 0
+            isWarmUpTime: 0
+            operationType: 0
+            pageNum: 1
+            pageSize: 10
+            provinceId: 0
+            status: 0
+            storeAddress: ''
+            storeCode: 91893
+            storeCompanyId: ''
+            storeName: ''
+        method: POST
+        url: ${base_url}/storeServer/store/storeBaseInfo/getStoreBaseInfoList
+    extract:
+        id: body.data.data.0.id
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

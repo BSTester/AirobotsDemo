@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: 门店部门列表-正常返回
+    variables:
+        baseUrl: /
+        departName: 贵阳
+teststeps:
+-   name: '${base_url}/storeServer/store/depart/departList?departName=贵阳'
+    request:
+        headers: 
+            Authorization: ${token}
+        method: GET
+        params:
+            departName: ${departName}
+        url: '${base_url}/storeServer/store/depart/departList'
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

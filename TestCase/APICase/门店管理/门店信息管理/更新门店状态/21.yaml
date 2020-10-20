@@ -1,0 +1,24 @@
+config:
+    base_url: ${base_url}
+    name: 更新门店状态-正常返回
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: ${base_url}/storeServer/store/storeBaseInfo/updateStoreStatus
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            statusButton: 4
+            storeId: 26003707
+        method: POST
+        url: ${base_url}/storeServer/store/storeBaseInfo/updateStoreStatus
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

@@ -1,0 +1,39 @@
+config:
+    base_url: $base_url
+    name: 候选人提交信息 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+teststeps:
+-   name: 查询候选人列表-客户端（候选人） - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/查询候选人列表/3.yaml
+    export: ["entrantId"]
+-   name: 候选人基础信息更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人基础信息更新/9.yaml
+-   name: 候选人教育背景更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人教育背景更新/11.yaml
+-   name: 候选人工作经历更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人工作经历更新/19.yaml
+-   name: 候选人家庭成员更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人家庭成员更新/13.yaml
+-   name: 候选人紧急联系人更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人紧急联系人更新/15.yaml
+-   name: 候选人其他说明更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人其他说明更新/17.yaml
+-   name: 候选人附件上传更新 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人附件上传更新/21.yaml
+-   name: /$baseUrlH5/entrant/recruit/entrantSubmit
+    request:
+        json: 
+            entrantId: $entrantId
+        headers:
+            Authorization: $token_h5
+            Content-Type: application/json
+        method: POST
+        url: /$baseUrlH5/entrant/recruit/entrantSubmit
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

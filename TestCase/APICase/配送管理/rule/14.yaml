@@ -1,0 +1,23 @@
+config:
+    base_url: $base_url
+    name: 获取可选门店列表-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+        keyword: 测试
+teststeps:
+-   name: '$baseUrl/rule/listStoreByName?keyword=测试'
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        method: GET
+        params:
+            keyword: $keyword
+        url: '$baseUrl/rule/listStoreByName'
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

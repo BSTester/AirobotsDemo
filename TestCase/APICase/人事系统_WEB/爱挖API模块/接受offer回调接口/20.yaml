@@ -1,0 +1,21 @@
+config:
+    base_url: $base_url
+    name: 接受offer回调接口 - 正常返回 - 门店伙伴
+    variables:
+        baseUrl: ehr-admin
+        base_url: ''
+teststeps:
+-   name: $baseUrl/ivva/callbackAcceptOffer?positionId=10475&recruitId=722992&resumeId=1819029&offerSendLogsId=3274&replyStatus=1
+    request:
+        headers:
+            Content-Type: application/json
+        json: {}
+        method: POST
+        url: $baseUrl/ivva/callbackAcceptOffer?positionId=10475&recruitId=722992&resumeId=1819029&offerSendLogsId=3274&replyStatus=1
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

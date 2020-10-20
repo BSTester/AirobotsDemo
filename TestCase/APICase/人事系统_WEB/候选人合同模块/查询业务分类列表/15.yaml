@@ -1,0 +1,27 @@
+config:
+    base_url: $base_url
+    name: 查询业务分类列表 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 合同分页查询 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_WEB/候选人合同模块/合同分页查询/13.yaml
+    export: ["entrantContractCode"]
+-   name: $baseUrl/entrant/contract/listCategory
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            entrantContractCode: $entrantContractCode
+        method: POST
+        url: $baseUrl/entrant/contract/listCategory
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+    extract:
+        contractCategoryId: body.data.0.contractCategoryId

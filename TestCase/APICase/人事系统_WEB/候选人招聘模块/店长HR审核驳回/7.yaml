@@ -1,0 +1,50 @@
+config:
+    base_url: $base_url
+    name: 店长HR审核驳回 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: $baseUrl/entrant/recruit/pageEntrant
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            auditStatus: 2
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: $baseUrl/entrant/recruit/pageEntrant
+    extract:
+        entrantId: body.data.list.0.entrantInfoId
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: $baseUrl/entrant/recruit/auditReject
+    request:
+        json:
+            entrantId: $entrantId
+            revokePartId:
+            -   "0"
+            -   "1"
+            reasonRemark: "测试驳回"
+            revokeReasonId:
+            -   "0"
+            -   "1"
+            -   "3"
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        method: POST
+        url: $baseUrl/entrant/recruit/auditReject
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

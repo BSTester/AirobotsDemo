@@ -1,0 +1,27 @@
+config:
+    base_url: ${base_url}
+    name: 注册设备 -设备已被注册
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/registDeviceInfo
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            deviceMac: 8S48Z_E382W_107717a491e6
+            deviceRatio: 1280*720
+            deviceSpec: 8.0*4.5
+            fkPlanScreenTypeId: 27522606
+            fkStoreId: 26003697
+            screenTypeName: 水吧主屏
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/registDeviceInfo
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 10001

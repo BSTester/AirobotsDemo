@@ -1,0 +1,22 @@
+config:
+    base_url: $base_url
+    name: 城市条件列表-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: $baseUrl/order/condition/city
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            keyWord: 贵阳
+        method: POST
+        url: $baseUrl/order/condition/city
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

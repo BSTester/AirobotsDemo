@@ -1,0 +1,52 @@
+config:
+    base_url: $base_url
+    name: 修改配送规则-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: 获取可选门店列表-按品牌搜索
+    testcase: TestCase/APICase/配送管理/rule/获取可选门店列表/1.yaml
+    export: ['storeCode', 'storeId', 'storeName']
+-   name: $baseUrl/rule/updateDeliveryRule
+    request:
+        json:
+            id: "3"
+            brandId: "26000252"
+            brandName: "奈雪の茶"
+            deliveryTypeId: "1"
+            deliveryTypeName: "平台配送"
+            dispatchMethodId: "1"
+            dispatchMethodName: "自动派单"
+            storeDTOList: 
+            -       storeId: $storeId
+                    storeCode: $storeCode
+                    storeName: $storeName
+            selectLen: 1
+            storeItemDTOList: 
+            -       storeCode: "91571"
+                    storeId: 26053917
+                    storeName: "测试门店001"
+            deliverInfoDTOList: 
+            -       id: "5"
+                    deliverName: "美团专送"
+            orderCallRuleInfoDTO: 
+                inTimeOrderCallRuleItemDTO: 
+                    callTypeId: "1"
+                    callTypeName: "备餐完成"
+                    minutes: "1"
+                reserveOrderCallRuleItemDTO: 
+                    callTypeId: "1"
+                    callTypeName: "备餐完成"
+                    minutes: "0"
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        method: POST
+        url: $baseUrl/rule/updateDeliveryRule
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

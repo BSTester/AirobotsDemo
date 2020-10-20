@@ -1,0 +1,26 @@
+config:
+    base_url: $base_url
+    name: 生成合同签署详情 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 查询业务分类列表 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_WEB/候选人合同模块/查询业务分类列表/15.yaml
+    export: ["entrantContractCode", "contractCategoryId"]
+-   name: $baseUrl/entrant/contract/generateContractSignDetail
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            contractCategoryId: $contractCategoryId
+            entrantContractCode: $entrantContractCode
+        method: POST
+        url: $baseUrl/entrant/contract/generateContractSignDetail
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

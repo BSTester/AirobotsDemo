@@ -1,0 +1,22 @@
+config:
+    base_url: ${base_url}
+    name: 注册设备验证-设备未注册，不存在
+    variables:
+        baseUrl: /storeServer
+        base_url: ''
+teststeps:
+-   name: ${base_url}/${baseUrl}/screen/checkDeviceInfo
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            deviceMac: anim Excepteur non
+        method: POST
+        url: ${base_url}/${baseUrl}/screen/checkDeviceInfo
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200

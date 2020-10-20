@@ -1,0 +1,26 @@
+config:
+    base_url: ${base_url}
+    name: 方案详情-正常返回
+    variables:
+        baseUrl: /
+        base_url: ''
+teststeps:
+-   name: 方案列表-正常返回-默认
+    testcase: TestCase/APICase/门店管理/时间方案管理/方案列表/11.yaml
+    export: ['id']
+-   name: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeInfo
+    request:
+        headers:
+            Content-Type: application/json
+            Authorization: ${token}
+        json:
+            id: $id
+        method: POST
+        url: ${base_url}/storeServer/store/businessTimeManage/getStoreBusinessTimeInfo
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

@@ -1,0 +1,23 @@
+config:
+    base_url: $base_url
+    name: 候选人登录 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+        base_url: ''
+teststeps:
+-   name: /$baseUrlH5/login
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            mobile: ${ENV(MOBILE)}
+            verificationCode: ${ENV(CODE)}
+        method: POST
+        url: /$baseUrlH5/login
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

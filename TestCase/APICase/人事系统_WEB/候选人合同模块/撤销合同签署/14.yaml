@@ -1,0 +1,43 @@
+config:
+    base_url: $base_url
+    name: 撤销合同签署 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 合同分页查询
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            pageNum: 1
+            pageSize: 10
+            signStatus: ["2"]
+        method: POST
+        url: $baseUrl/entrant/contract/pageContract
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+    extract:
+        entrantContractCode: body.data.list.0.entrantContractCode
+-   name: $baseUrl/entrant/contract/revoke
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            entrantContractCode: $entrantContractCode
+            revokeContractReason: 测试撤销
+        method: POST
+        url: $baseUrl/entrant/contract/revoke
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

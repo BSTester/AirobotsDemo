@@ -1,0 +1,37 @@
+config:
+    base_url: $base_url
+    name: 候选人家庭成员更新 - 正常返回
+    variables:
+        baseUrlH5: /ehr-entrant
+teststeps:
+-   name: 候选人家庭成员保存 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人家庭成员保存/12.yaml
+-   name: /$baseUrlH5/entrant/recruit/modifyEntrantFamily
+    request:
+        json:
+        -   address: 联系地址11
+            entrantId: $entrantId
+            familyName: 兄弟1
+            familyOrder: ''
+            occupation: 无业
+            phoneNum: '18444444444'
+            relation: 兄弟
+        -   address: 联系地址11
+            entrantId: $entrantId
+            familyName: 兄弟2
+            familyOrder: ''
+            occupation: 无业
+            phoneNum: '18444444444'
+            relation: 兄弟
+        headers:
+            Authorization: $token_h5
+            Content-Type: application/json
+        method: POST
+        url: /$baseUrlH5/entrant/recruit/modifyEntrantFamily
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

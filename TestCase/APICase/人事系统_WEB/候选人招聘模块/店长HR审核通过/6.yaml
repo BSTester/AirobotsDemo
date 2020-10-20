@@ -1,0 +1,44 @@
+config:
+    base_url: $base_url
+    name: 店长HR审核通过 - 正常返回
+    variables:
+        baseUrl: ehr-admin
+teststeps:
+-   name: 候选人提交信息 - 正常返回
+    testcase: ./TestCase/APICase/人事系统_H5/候选人招聘模块/候选人提交信息/22.yaml
+-   name: $baseUrl/entrant/recruit/pageEntrant
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            auditStatus: 2
+            pageNum: 1
+            pageSize: 10
+        method: POST
+        url: $baseUrl/entrant/recruit/pageEntrant
+    extract:
+        entrantId: body.data.list.0.entrantInfoId
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+-   name: $baseUrl/entrant/recruit/auditPass
+    request:
+        json:
+            entrantId: $entrantId
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        method: POST
+        url: $baseUrl/entrant/recruit/auditPass
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0

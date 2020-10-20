@@ -1,0 +1,25 @@
+config:
+    base_url: $base_url
+    name: 重新呼叫配送-正常返回
+    variables:
+        baseUrl: /storeServer/deliveryManagement
+teststeps:
+-   name: 根据条件筛选参数获取配送订单信息-按品牌和配送状态查询
+    testcase: TestCase/APICase/配送管理/order/根据条件筛选参数获取配送订单信息/18.yaml
+    export: ['deliveryNo']
+-   name: $baseUrl/order/recallDelivery
+    request:
+        headers:
+            Authorization: $token
+            Content-Type: application/json
+        json:
+            deliveryNo: $deliveryNo
+        method: POST
+        url: $baseUrl/order/recallDelivery
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
