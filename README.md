@@ -24,8 +24,6 @@ Airobots整合了Airtest Project和RobotFramework框架的方法。
 使用前请先安装相关依赖包, 执行
 
 ```
-pip install pm2case                                                         # 可选 Postman转case工具
-pip install https://github.com/BSTester/Airtest/archive/master.zip          # Python3.8 请先安装这个版本的Airtest
 pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 ```
 
