@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     ports:
       - "6044:4444"
-    container_name: tfw_selenium_grid
+    container_name: air_selenium_grid
   webdriver:
     build: ./WebChrome/WebDriver
     restart: unless-stopped
@@ -13,11 +13,11 @@ services:
       - "6080:80"
     links:
       - grid
-    container_name: tfw_web_driver
-  runtest:
+    container_name: air_web_driver
+  airobots:
     build: ./
     volumes:
       - ./:/data/
     links:
       - grid
-    container_name: runtest
+    container_name: airobots_runner
