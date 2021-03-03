@@ -47,3 +47,36 @@ airobots -t web ./TestCase/WebCase/ --html=Results/report.html          # Web测
 airobots -t android ./TestCase/AndroidCase/ --html=Results/report.html  # Android测试
 airobots -t ios ./TestCase/IOSCase/ --html=Results/report.html          # IOS测试
 ```
+
+## 查看Allure报告
+
+```
+allure serve ./Results
+```
+
+## 安装Allure
+
+### Linux
+```
+sudo apt-add-repository ppa:qameta/allure
+sudo apt-get update 
+sudo apt-get install allure
+```
+
+### Mac OS X
+
+对于Mas OS，可通过[Homebrew](https://brew.sh/)进行自动安装
+
+```
+brew install allure
+```
+
+### Windows
+
+对于Windows，可从[Scoop](https://scoop.sh/)命令行安装程序获得Allure。
+
+要安装Allure，请下载并安装Scoop，然后在Powershell中执行
+
+```
+scoop install allure
+```

@@ -3,7 +3,7 @@
 from airobots.core.api import *
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
-from TestCase.PageObjects.android_demo import DemoOP
+from TestCase.PageObjects.Android.android_demo import DemoOP
 from airobots.poco.android import AndroidUiautomation
 import os
 

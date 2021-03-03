@@ -4,7 +4,7 @@ from airtest.core.api import *
 from airobotLibrary import AirSelenium
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
-from TestCase.PageObjects.demo import DemoOP
+from TestCase.PageObjects.Web.baidu_demo import DemoOP
 
 
 class CustomCase(TestCase):
@@ -46,8 +46,8 @@ class CustomCase(TestCase):
         self.wd.switch_window('NEW')
         self.wd.page_should_contain('百度百科')
         # 可混合使用selenium原生方法
-        # self.wd.driver.get('https://www.qq.com')
-        # self.wd.click_link('新闻')
-        # self.wd.switch_window('NEW')
-        # title = self.wd.get_title()
-        # assert_equal(title, '新闻中心-腾讯网', '对比页面标题')
+        self.wd.driver.get('https://www.qq.com')
+        self.wd.click_link('新闻')
+        self.wd.switch_window('NEW')
+        title = self.wd.get_title()
+        assert_equal(title, '新闻中心-腾讯网', '对比页面标题')

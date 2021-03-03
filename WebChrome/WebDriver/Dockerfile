@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update --fix-missing && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN ( sleep 4 && while [ 1 ]; do sleep 1; echo y; done ) | apt-get install -y --no-install-recommends curl git openjdk-8-jdk fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming fonts-tlwg-garuda
+RUN ( sleep 4 && while [ 1 ]; do sleep 1; echo y; done ) | apt-get install -y --no-install-recommends curl git openjdk-11-jdk fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming fonts-tlwg-garuda
 RUN ( sleep 4 && while [ 1 ]; do sleep 1; echo y; done ) | apt-get install -y --no-install-recommends vim zip unzip wget libappindicator3-1 language-pack-zh-han* fonts-liberation
 
 RUN curl -o google-chrome-stable_current_amd64.deb -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
@@ -24,7 +24,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
     CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib \
     PATH=${JAVA_HOME}/bin:$PATH
 
-ENV NODE_VERSION=11.3.0 \
+ENV NODE_VERSION=15.11.0 \
     NODE_REGISTRY=https://npm.taobao.org/mirrors/node
 
 RUN curl -SLO "$NODE_REGISTRY/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" && \
