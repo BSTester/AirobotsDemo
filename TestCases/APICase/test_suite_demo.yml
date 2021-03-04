@@ -4,9 +4,9 @@ config:
         base_url: https://td.dia03.com
 testcases:
 -   name: 登录
-    testcase: TestCase/APICase/api_demo/login.yml
+    testcase: TestCases/APICase/api_demo/login.yml
     export: ['token']
 -   name: 获取菜单
-    testcase: TestCase/APICase/api_demo/menu.yml
+    testcase: TestCases/APICase/api_demo/menu.yml
 -   name: 获取个人信息
-    testcase: TestCase/APICase/api_demo/info.yml
+    testcase: TestCases/APICase/api_demo/info.yml

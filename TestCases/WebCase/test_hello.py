@@ -4,7 +4,7 @@ from airtest.core.api import *
 from airobotLibrary import AirSelenium
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
-from TestCase.PageObjects.Web.baidu_demo import DemoOP
+from TestCases.PageObjects.Web.baidu_demo import DemoOP
 
 
 class CustomCase(TestCase):
