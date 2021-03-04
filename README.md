@@ -11,7 +11,7 @@ Airobots整合了Airtest Project和RobotFramework框架的方法。
     │  ├─TestFiles
     │  └─TestSQL
     ├─Results                           # 测试报告存放目录
-    ├─TestCase                          # 测试用例存放目录
+    ├─TestCases                          # 测试用例存放目录
     │  ├─APICase                        # API测试用例存放目录
     │  ├─WebCase                        # Web测试用例存放目录
     │  ├─AndroidCase                    # Android测试用例存放目录
@@ -34,18 +34,18 @@ pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 
 Allure 报告
 ```
-airobots -t api ./TestCase/APICase/ --alluredir=Results             # API测试
-airobots -t web ./TestCase/WebCase/ --alluredir=Results             # Web测试
-airobots -t android ./TestCase/AndroidCase/ --alluredir=Results     # Android测试
-airobots -t ios ./TestCase/IOSCase/ --alluredir=Results             # IOS测试
+airobots -t api ./TestCases/APICase/ --alluredir=Results             # API测试
+airobots -t web ./TestCases/WebCase/ --alluredir=Results             # Web测试
+airobots -t android ./TestCases/AndroidCase/ --alluredir=Results     # Android测试
+airobots -t ios ./TestCases/IOSCase/ --alluredir=Results             # IOS测试
 ```
 
 HTML 报告
 ```
-airobots -t api ./TestCase/APICase/ --html=Results/report.html          # API测试
-airobots -t web ./TestCase/WebCase/ --html=Results/report.html          # Web测试
-airobots -t android ./TestCase/AndroidCase/ --html=Results/report.html  # Android测试
-airobots -t ios ./TestCase/IOSCase/ --html=Results/report.html          # IOS测试
+airobots -t api ./TestCases/APICase/ --html=Results/report.html          # API测试
+airobots -t web ./TestCases/WebCase/ --html=Results/report.html          # Web测试
+airobots -t android ./TestCases/AndroidCase/ --html=Results/report.html  # Android测试
+airobots -t ios ./TestCases/IOSCase/ --html=Results/report.html          # IOS测试
 ```
 
 ## 查看Allure报告
