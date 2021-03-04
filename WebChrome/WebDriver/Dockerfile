@@ -1,4 +1,4 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc:bionic
+FROM dorowu/ubuntu-desktop-lxde-vnc
 
 # Expose Macaca and VNC ports
 EXPOSE 80
@@ -9,17 +9,16 @@ WORKDIR /data
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-COPY sources.list /etc/apt/sources.list
-
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 RUN apt-get update --fix-missing && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN ( sleep 4 && while [ 1 ]; do sleep 1; echo y; done ) | apt-get install -y --no-install-recommends curl git openjdk-11-jdk fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming fonts-tlwg-garuda
 RUN ( sleep 4 && while [ 1 ]; do sleep 1; echo y; done ) | apt-get install -y --no-install-recommends vim zip unzip wget libappindicator3-1 language-pack-zh-han* fonts-liberation
 
 RUN curl -o google-chrome-stable_current_amd64.deb -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb && rm -f google-chrome-stable_current_amd64.deb && apt-get autoremove -y && apt-get clean -y && \
-    curl -o /opt/selenium-server-standalone.jar -L https://npm.taobao.org/mirrors/selenium/3.141/selenium-server-standalone-3.141.59.jar
+    curl -o /opt/selenium-server-standalone.jar -L https://npm.taobao.org/mirrors/selenium/3.9/selenium-server-standalone-3.9.1.jar
 
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
     JRE_HOME=${JAVA_HOME}/jre \
     CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib \
     PATH=${JAVA_HOME}/bin:$PATH
