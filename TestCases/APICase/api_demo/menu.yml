@@ -3,6 +3,7 @@ config:
     variables: {}
     verify: false
     base_url: $base_url
+    order: 1
 teststeps:
 -   name: /v1/user/permission-menu
     request:

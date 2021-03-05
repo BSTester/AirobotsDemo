@@ -1,6 +1,5 @@
 config:
     name: 登录演示测试
-    variables: {}
     verify: false
     base_url: $base_url
 teststeps:

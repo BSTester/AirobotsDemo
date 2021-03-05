@@ -27,6 +27,11 @@ Airobots整合了Airtest Project和RobotFramework框架的方法。
 pip install airobots -i https://mirrors.aliyun.com/pypi/simple
 ```
 
+安装优化版的httprunner, 支持自定义用例执行顺序
+```
+pip install -U https://github.com/BSTester/httprunner/archive/master.zip
+```
+
 运行Web测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
 
 

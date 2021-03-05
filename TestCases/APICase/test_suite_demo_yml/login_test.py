@@ -2,10 +2,16 @@
 # FROM: TestCases/APICase/api_demo/login.yml
 
 
+import pytest
+
+
 from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 
 class TestCaseLogin(HttpRunner):
+    @pytest.mark.first
+    def test_start(self):
+        super().test_start()
 
     config = (
         Config("登录")

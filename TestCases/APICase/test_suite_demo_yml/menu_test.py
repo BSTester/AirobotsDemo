@@ -2,10 +2,16 @@
 # FROM: TestCases/APICase/api_demo/menu.yml
 
 
+import pytest
+
+
 from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 
 class TestCaseMenu(HttpRunner):
+    @pytest.mark.second_to_last
+    def test_start(self):
+        super().test_start()
 
     config = (
         Config("获取菜单")
