@@ -5,7 +5,7 @@
 import pytest
 
 
-from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
+from airhttprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 
 class TestCaseLogin(HttpRunner):

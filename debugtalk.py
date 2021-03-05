@@ -3,7 +3,7 @@ import os
 import json
 import requests
 from urllib.parse import urlencode
-from httprunner import __version__
+from airhttprunner import __version__
 
 
 def now_time():

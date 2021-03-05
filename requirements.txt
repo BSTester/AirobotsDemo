@@ -1,3 +1,2 @@
 airobots
 Faker
-pytest-repeat

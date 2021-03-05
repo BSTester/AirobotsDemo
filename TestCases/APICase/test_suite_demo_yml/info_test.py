@@ -2,7 +2,7 @@
 # FROM: TestCases/APICase/api_demo/info.yml
 
 
-from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
+from airhttprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 
 class TestCaseInfo(HttpRunner):
