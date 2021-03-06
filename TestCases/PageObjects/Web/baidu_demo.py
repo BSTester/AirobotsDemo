@@ -26,9 +26,9 @@ class DemoOP(TestCase):
 
     def click_search_button(self):
         # 使用图片断言
-        self.wd.assert_template(self.SEARCH_BUTTON, '搜索按钮是否存在')
+        self.wd.air_assert(self.SEARCH_BUTTON, '搜索按钮是否存在')
         # 使用图像识别查找控件并点击
-        self.wd.airtest_touch(self.SEARCH_BUTTON)
+        self.wd.air_click(self.SEARCH_BUTTON)
 
     def search(self, text):
         self.input_keywords(text=text)
