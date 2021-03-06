@@ -19,6 +19,26 @@ class CommonLibrary(object):
         self.db = DatabaseLibrary()
         self.fake = Faker(['zh_CN'])
 
+    # 直连PostgreSql, 执行查询
+    def postgre_query(self, sql, host=db_host, port=db_port, user=db_user, passwd=db_passwd, db_name=db_name):
+        """执行PostgreSql查询语句"""
+        db_connect_string="database='{}', user='{}', password='{}', host='{}', port={}".format(
+            db_name, user, passwd, db_host, db_port)
+        self.db.connect_to_database_using_custom_params(
+            dbapiModuleName='psycopg2', db_connect_string='{}'.format(db_connect_string)) 
+        result = self.db.query(sql)
+        self.db.disconnect_from_database()
+        return result
+
+    # 直连PostgreSql, 执行更新
+    def postgre_update(self, sql, host=db_host, port=db_port, user=db_user, passwd=db_passwd, db_name=db_name):
+        """执行PostgreSql更新语句"""
+        self.db.connect_to_database_using_custom_params(
+            dbapiModuleName='psycopg2', db_connect_string="database='{}', user='{}', password='{}', host='{}', port={}".format(
+            db_name, user, passwd, db_host, db_port)) 
+        self.db.execute_sql_string(sqlString=sql)
+        self.db.disconnect_from_database()
+
     def mysql_query(self, sql, host=db_host, port=db_port, user=db_user, passwd=db_passwd, db_name=db_name, res_dict=True):
         """执行MYSQL查询语句"""
         with self.mysql_connect() as mysql_ssh:
@@ -41,12 +61,14 @@ class CommonLibrary(object):
             self.db.execute_sql_string(sqlString=sql)
             self.db.disconnect_from_database()
 
+    # 通过跳板机连接
     def mysql_connect(self, host=db_host, port=db_port, ssl_keyfile=redis_ssh_key, 
                     ssh_host=redis_ssh_host, ssh_port=redis_ssh_port, ssh_user=redis_ssh_user):
         private_key = paramiko.RSAKey.from_private_key_file(ssl_keyfile)
         return SSHTunnelForwarder((ssh_host, ssh_port), ssh_username=ssh_user, ssh_private_key=private_key, 
                                   remote_bind_address=(host, port))
 
+    # 通过跳板机连接
     def redis_connect(self, host=redis_host, port=redis_port, ssl_keyfile=redis_ssh_key, 
                     ssh_host=redis_ssh_host, ssh_port=redis_ssh_port, ssh_user=redis_ssh_user):
         private_key = paramiko.RSAKey.from_private_key_file(ssl_keyfile)

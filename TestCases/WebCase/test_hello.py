@@ -5,6 +5,8 @@ from airobotLibrary import AirSelenium
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
 from TestCases.PageObjects.Web.baidu_demo import DemoOP
+from Library.common_library import CommonLibrary
+import pytest
 
 
 class CustomCase(TestCase):
@@ -38,6 +40,7 @@ class CustomCase(TestCase):
         super(CustomCase, cls).tearDownClass()
         cls.wd.close_browser()
 
+    @pytest.mark.second_to_last
     def test_baidu(self):
         # 使用RobotFrameWork-SeleniumLibrary方法
         self.wd.go_to('https://www.baidu.com')

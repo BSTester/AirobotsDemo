@@ -1,2 +1,3 @@
 airobots
 Faker
+psycopg2-binary
