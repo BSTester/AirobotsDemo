@@ -16,6 +16,7 @@ class CustomCase(TestCase):
     def setUpClass(cls):
         super(CustomCase, cls).setUpClass()
         cls.wd = AirSelenium()
+        cls.wd.set_window_size(1920,1080)
         cls.wd.set_browser_implicit_wait(20)
         cls.baidu = DemoOP(driver=cls.wd)
 
@@ -44,7 +45,7 @@ class CustomCase(TestCase):
     def test_baidu(self):
         # 使用RobotFrameWork-SeleniumLibrary方法
         self.wd.go_to('https://www.baidu.com')
-        self.wd.maximize_browser_window()
+        # self.wd.maximize_browser_window()
         self.baidu.search_and_click('软件测试', '百度百科')
         self.wd.switch_window('NEW')
         self.wd.page_should_contain('百度百科')

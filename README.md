@@ -24,7 +24,7 @@ Airobots整合了Airtest Project和RobotFramework框架的方法。
 使用前请先安装相关依赖包, 执行
 
 ```
-pip install airobots -i https://mirrors.aliyun.com/pypi/simple
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
 ```
 
 运行Web测试，需要安装ChromeDriver，请自行下载安装，或安装node之后执行 `npm install -g chromedriver` 安装
