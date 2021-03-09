@@ -8,6 +8,9 @@ services:
     container_name: air_selenium_grid
   webdriver:
     build: ./WebChrome/WebDriver
+    environment: 
+      VNC_PASSWORD: test123456
+      RESOLUTION: 1920x1080
     restart: unless-stopped
     ports:
       - "6080:80"
