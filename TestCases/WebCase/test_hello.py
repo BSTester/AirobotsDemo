@@ -16,6 +16,7 @@ class CustomCase(TestCase):
     def setUpClass(cls):
         super(CustomCase, cls).setUpClass()
         cls.wd = AirSelenium()
+        cls.wd.open_browser()
         cls.wd.set_window_size(1920,1080)
         cls.wd.set_browser_implicit_wait(20)
         cls.baidu = DemoOP(driver=cls.wd)
