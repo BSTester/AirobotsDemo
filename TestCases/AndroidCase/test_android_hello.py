@@ -14,7 +14,7 @@ class AndroidCase(TestCase):
     @classmethod
     def setUpClass(cls):
         super(AndroidCase, cls).setUpClass()
-        cls.poco = AndroidUiautomation(use_airtest_input=True, screenshot_each_action=False)
+        cls.poco = AndroidUiautomation(screenshot_each_action=False)
         cls.android = DemoOP(driver=cls.poco)
 
     def setUp(self):
