@@ -1,7 +1,7 @@
 # -*- encoding=utf8 -*-
 
 from airtest.core.api import *
-from airobotLibrary import AirSelenium
+from airobots.robot import AirSelenium
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
 from TestCases.PageObjects.Web.baidu_demo import DemoOP

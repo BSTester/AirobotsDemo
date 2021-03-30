@@ -1,6 +1,6 @@
 # coding=utf8
 from Resource.common_veriables import *
-from airobotLibrary import AirDatabase as DatabaseLibrary
+from airobots.robot import AirDatabase as DatabaseLibrary
 from faker import Faker
 from sshtunnel import SSHTunnelForwarder
 from hashlib import md5
