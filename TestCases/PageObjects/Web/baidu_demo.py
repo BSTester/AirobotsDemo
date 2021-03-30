@@ -3,7 +3,7 @@
 from airtest.core.api import *
 from unittest import TestCase
 from airtest.core.settings import Settings as ST
-from airobotLibrary import AirSelenium
+from airobots.robot import AirSelenium
 from pathlib import Path
 
 TPL_PATH = Path(__file__).parent
