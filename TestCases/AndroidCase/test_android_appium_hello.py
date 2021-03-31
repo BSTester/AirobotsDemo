@@ -2,11 +2,10 @@
 
 from airobots.core.api import *
 from unittest import TestCase
-from airtest.core.settings import Settings as ST
+from airobots.core.settings import ST
 from TestCases.PageObjects.Android.android_appium_demo import DemoOP
 from airobots.robot import AirAppium
 import os
-
 
 class AndroidCase(TestCase):
     """Custom launcher."""
