@@ -1,6 +1,6 @@
 # coding=utf8
 from Resource.common_veriables import *
-from airobots.robot import AirDatabase as DatabaseLibrary
+from airobots.robot import AirDatabase
 from faker import Faker
 from sshtunnel import SSHTunnelForwarder
 from hashlib import md5
@@ -16,7 +16,7 @@ class CommonLibrary(object):
     def __init__(self):
         self.headers = {'Content-Type': 'application/json; charset=UTF-8',
                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'}
-        self.db = DatabaseLibrary()
+        self.db = AirDatabase()
         self.fake = Faker(['zh_CN'])
 
     # 直连PostgreSql, 执行查询

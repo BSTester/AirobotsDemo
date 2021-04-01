@@ -3,10 +3,9 @@
 from airobots.core.api import *
 from unittest import TestCase
 from airobots.core.settings import ST
-from TestCases.PageObjects.Android.android_demo import DemoOP
-from airobots.poco.android import AndroidUiautomation
+from TestCases.PageObjects.Android.android_appium_demo import DemoOP
+from airobots.robot import AirAppium
 import os
-
 
 class AndroidCase(TestCase):
     """Custom launcher."""
@@ -14,8 +13,9 @@ class AndroidCase(TestCase):
     @classmethod
     def setUpClass(cls):
         super(AndroidCase, cls).setUpClass()
-        cls.poco = AndroidUiautomation(screenshot_each_action=False)
-        cls.android = DemoOP(driver=cls.poco)
+        cls.driver = AirAppium()
+        cls.android = DemoOP(driver=cls.driver)
+        cls.driver.open_application(remote_url='http://localhost:4723/wd/hub', platformName="Android", udid='98AKBNM246L8')
 
     def setUp(self):
         """Custom setup logic here."""
@@ -36,6 +36,7 @@ class AndroidCase(TestCase):
     @classmethod
     def tearDownClass(cls):
         super(AndroidCase, cls).tearDownClass()
+        cls.driver.close_all_applications()
 
     def test_calc(self):
         self.android.wake_up_and_open_calc()

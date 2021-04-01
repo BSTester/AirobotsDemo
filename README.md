@@ -1,8 +1,8 @@
 # Airobots Demo Project
 
-Airobots整合了Airtest Project和RobotFramework框架的方法。
+全端自动化测试框架Airobots的演示项目。
 
-另外整合了HTTPRunner，实现一个框架同时支持Android、IOS、WEB、API的自动化测试及性能测试(HTTPRunner提供的基于Locust的压力生成器，不带资源监控)。
+Airobots整合了Airtest、RobotFramework、Selenium、Appium、HTTPRunner、Locust框架的方法，从而实现一套框架，能够进行全端的测试，统一执行入口和报告的输出。
 
 目录结构说明：
 

@@ -2,7 +2,7 @@
 
 from airobots.core.api import *
 from unittest import TestCase
-from airtest.core.settings import Settings as ST
+from airobots.core.settings import ST
 from TestCases.PageObjects.IOS.ios_demo import DemoOP
 # from TestCases.IOSCase import driver
 import os
