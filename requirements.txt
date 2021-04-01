@@ -1,3 +1,6 @@
 airobots
 Faker
 psycopg2-binary
+paramiko
+sshtunnel
+redis
