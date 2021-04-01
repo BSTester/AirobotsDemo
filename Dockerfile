@@ -9,4 +9,4 @@ RUN cd /data && \
     pip3 install -r /data/requirements.txt && \
 	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-CMD /bin/bash -c 'airobots -v'
+ENTRYPOINT ["airobots"]
