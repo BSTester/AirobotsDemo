@@ -10,4 +10,4 @@ RUN cd /data && apt-get update -y && apt-get install -y python3-pip && \
 	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN pip3 install opencv-python-headless -i https://mirrors.aliyun.com/pypi/simple 
 
-CMD ["export", "DISPLAY=:1", "&&", "export", "NODE_IN_DOCKER=1", "&&", "export", "RESOLUTION=1920x1080", "&&", "/startup.sh", "&"]
+CMD ["export", "DISPLAY=:1", "&&", "export", "NODE_IN_DOCKER=1", "&&", "export", "RESOLUTION=1920x1080", "&&", "/startup.sh"]
